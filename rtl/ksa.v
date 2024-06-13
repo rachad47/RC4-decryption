@@ -71,7 +71,7 @@ module ksa (
     logic [1:0] memory_sel_init;
 
     meme_init meme_init_inst (
-        .clk(clk), .state_start(reset_n),  
+        .clk(clk), .state_start(~KEY[3]),  
         .finish(finish_init),
         .init_mem_handler(init_mem_handler),
         .data(data_init),
@@ -88,7 +88,7 @@ module ksa (
     
 
     mem_shuffle memory_shuffle_inst (
-        .clk(clk), .state_start(finish_init),
+        .clk(clk), .state_start(~KEY[2]),
         .finish(finish_shuffle),
         .shuffle_mem_handler(shuffle_mem_handler),
         .data(data_shuffle),
