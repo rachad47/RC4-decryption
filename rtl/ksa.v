@@ -90,7 +90,7 @@ module ksa (
         .clk(clk), .state_start(finish_init),
         .finish(finish_shuffle),
         .shuffle_mem_handler(shuffle_mem_handler),
-        .data(data_shuffle),
+        // .data(data_shuffle),
         .address(address_shuffle),
         .memory_sel(memory_sel_shuffle),
         .wen(wen_shuffle),
