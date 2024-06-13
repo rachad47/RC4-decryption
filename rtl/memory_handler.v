@@ -35,7 +35,7 @@ module memory_handler (
     // for decrypted message RAM
     output logic wren_d,
     output logic [7:0] data_d,
-    output logic [4:0] address_decrypt_d,  //I changed that casue same name was declared above
+    output logic [4:0] address_d,  //I changed that casue same name was declared above
 
     // for encrypted message ROM
     input logic [7:0] q_m,
@@ -58,16 +58,16 @@ always_comb begin
                 output_data_shuffle = 0;
                 wren_d = 0;
                 data_d = 0;
-                address_decrypt_d = 0;
+                address_d = 0;
                 address_m = 0;
             end 
             default: begin
-                // SHOULD NEVER REACH HERE
+                // SHOULD NOT REACH HERE
                 output_data_decrypt = 1'b0;
                 output_data_shuffle = 1'b0;
                 wren_d = 1'b0;
                 data_d = 1'b0;
-                address_decrypt_d = 1'b0;
+                address_d = 1'b0;
                 address_m = 1'b0;
                 wren = 1'b0;
                 data = 1'b0;
@@ -78,12 +78,107 @@ always_comb begin
     // Check if we are in shuffle stage
     else if (start_shuffle) begin
         case (mem_sel_shuffle)
-            // Working 
+            // Working RAM
             2'b01: begin
-                address = 0;
+                // read from working RAM
+                wren = wren_shuffle;
+                data = data_shuffle;
+                address = address_shuffle;
+                output_data_shuffle = q;
+
+                // Everything else is not used
+                output_data_decrypt = 0;
+                wren_d = 0;
+                data_d = 0;
+                address_d = 0;
+                address_m = 0;
             end 
-            default: address = 0;
+            default: begin
+                // SHOULD NOT REACH HERE
+                output_data_decrypt = 1'b0;
+                output_data_shuffle = 1'b0;
+                wren_d = 1'b0;
+                data_d = 1'b0;
+                address_d = 1'b0;
+                address_m = 1'b0;
+                wren = 1'b0;
+                data = 1'b0;
+                address = 1'b0; 
+            end
         endcase
+    end
+    // Check if we are in decrypt stage
+    else if (start_decrypt) begin
+        case (mem_sel_decrypt)
+            // Working RAM
+            2'b01: begin
+                // read from working RAM
+                wren = wren_decrypt;
+                data = data_decrypt;
+                address = address_decrypt;
+                output_data_decrypt = q;
+
+                // Everything else is not used
+                output_data_shuffle = 0;
+                wren_d = 0;
+                data_d = 0;
+                address_d = 0;
+                address_m = 0;
+            end
+            // ROM
+            2'b10: begin
+                // read from ROM
+                address_m = address_decrypt;
+                output_data_decrypt = q_m;
+
+                // Everyting else is not used;
+                wren = 0;
+                data = 0;
+                address = 0;
+                output_data_shuffle = 0;
+                wren_d = 0;
+                data_d = 0;
+                address_d = 0;
+            end
+            2'b11: begin
+                // write to encrypted message RAM
+                address_d = address_decrypt;
+                wren_d = wren_decrypt;
+                data_d = data_decrypt;
+
+                // Everything else is not used
+                output_data_decrypt = 0;
+                output_data_shuffle = 0;
+                wren = 0;
+                data = 0;
+                address = 0;
+                address_m = 0;
+            end
+            default: begin
+                // SHOULD NOT REACH HERE
+                output_data_decrypt = 1'b0;
+                output_data_shuffle = 1'b0;
+                wren_d = 1'b0;
+                data_d = 1'b0;
+                address_d = 1'b0;
+                address_m = 1'b0;
+                wren = 1'b0;
+                data = 1'b0;
+                address = 1'b0; 
+            end
+        endcase
+    end
+    else begin
+        // NOT USED 
+        output_data_decrypt = 1'b0;
+        output_data_shuffle = 1'b0;
+        wren_d = 1'b0;
+        data_d = 1'b0;
+        address_d = 1'b0;
+        address_m = 1'b0;
+        wren = 1'b0;
+        data = 1'b0;
+        address = 1'b0; 
     end
 end
 
