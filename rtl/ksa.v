@@ -84,6 +84,7 @@ module ksa (
     logic finish_shuffle, shuffle_mem_handler, wen_shuffle;
     logic [7:0] data_shuffle, address_shuffle, readdata_shuffle;
     logic [1:0] memory_sel_shuffle;
+    
 
     mem_shuffle memory_shuffle_inst (
         .clk(clk), .state_start(finish_init),
@@ -91,9 +92,9 @@ module ksa (
         .shuffle_mem_handler(shuffle_mem_handler),
         .data(data_shuffle),
         .address(address_shuffle),
-        .memory_sel_shuffle(memory_sel_shuffle).
+        .memory_sel(memory_sel_shuffle),
         .wen(wen_shuffle),
-        .secret_key(),
+        .secret_key({14'b0, SW[9:0]}),
         .q_data(readdata_shuffle)
     );
 

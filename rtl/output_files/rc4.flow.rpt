@@ -1,5 +1,5 @@
 Flow report for rc4
-Wed Jun 12 23:25:02 2024
+Thu Jun 13 15:02:55 2024
 Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
 
 
@@ -41,25 +41,25 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Wed Jun 12 23:24:53 2024       ;
+; Flow Status                     ; Successful - Thu Jun 13 15:02:55 2024       ;
 ; Quartus Prime Version           ; 16.1.2 Build 203 01/18/2017 SJ Lite Edition ;
 ; Revision Name                   ; rc4                                         ;
 ; Top-level Entity Name           ; ksa                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 98 / 32,070 ( < 1 % )                       ;
-; Total registers                 ; 137                                         ;
-; Total pins                      ; 69 / 457 ( 15 % )                           ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 165                                         ;
+; Total pins                      ; 67                                          ;
 ; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 2,048 / 4,065,280 ( < 1 % )                 ;
-; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
+; Total block memory bits         ; 2,048                                       ;
+; Total DSP Blocks                ; 0                                           ;
 ; Total HSSI RX PCSs              ; 0                                           ;
 ; Total HSSI PMA RX Deserializers ; 0                                           ;
 ; Total HSSI TX PCSs              ; 0                                           ;
 ; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0 / 6 ( 0 % )                               ;
-; Total DLLs                      ; 0 / 4 ( 0 % )                               ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
 +---------------------------------+---------------------------------------------+
 
 
@@ -68,7 +68,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/12/2024 23:23:35 ;
+; Start date & time ; 06/13/2024 15:02:33 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; rc4                 ;
 +-------------------+---------------------+
@@ -82,7 +82,7 @@ agreement for further details.
 ; AUTO_RAM_RECOGNITION                              ; Off                                    ; On                 ; --          ; --         ;
 ; AUTO_ROM_RECOGNITION                              ; Off                                    ; On                 ; --          ; --         ;
 ; BLOCK_RAM_AND_MLAB_EQUIVALENT_POWER_UP_CONDITIONS ; Care                                   ; Auto               ; --          ; --         ;
-; COMPILER_SIGNATURE_ID                             ; 264562652658123.171825981506968        ; --                 ; --          ; --         ;
+; COMPILER_SIGNATURE_ID                             ; 264562652658123.171831615327624        ; --                 ; --          ; --         ;
 ; EXTRACT_VERILOG_STATE_MACHINES                    ; Off                                    ; On                 ; --          ; --         ;
 ; EXTRACT_VHDL_STATE_MACHINES                       ; Off                                    ; On                 ; --          ; --         ;
 ; FITTER_EFFORT                                     ; Standard Fit                           ; Auto Fit           ; --          ; --         ;
@@ -107,38 +107,29 @@ agreement for further details.
 +---------------------------------------------------+----------------------------------------+--------------------+-------------+------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Flow Elapsed Time                                                                                                             ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:22     ; 1.0                     ; 4901 MB             ; 00:00:19                           ;
-; Fitter                    ; 00:00:46     ; 1.0                     ; 7118 MB             ; 00:00:33                           ;
-; Assembler                 ; 00:00:06     ; 1.0                     ; 4832 MB             ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:07     ; 1.1                     ; 5219 MB             ; 00:00:04                           ;
-; Total                     ; 00:01:21     ; --                      ; --                  ; 00:01:00                           ;
-+---------------------------+--------------+-------------------------+---------------------+------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:21     ; 1.0                     ; 4911 MB             ; 00:00:19                           ;
+; Total                ; 00:00:21     ; --                      ; --                  ; 00:00:19                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
-+-----------------------------------------------------------------------------------------+
-; Flow OS Summary                                                                         ;
-+---------------------------+------------------+------------+------------+----------------+
-; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
-+---------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis      ; LAPTOP-FAA6248G  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter                    ; LAPTOP-FAA6248G  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler                 ; LAPTOP-FAA6248G  ; Windows 10 ; 10.0       ; x86_64         ;
-; TimeQuest Timing Analyzer ; LAPTOP-FAA6248G  ; Windows 10 ; 10.0       ; x86_64         ;
-+---------------------------+------------------+------------+------------+----------------+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; LAPTOP-FAA6248G  ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off rc4 -c rc4
-quartus_fit --read_settings_files=off --write_settings_files=off rc4 -c rc4
-quartus_asm --read_settings_files=off --write_settings_files=off rc4 -c rc4
-quartus_sta rc4 -c rc4
 
 
 
