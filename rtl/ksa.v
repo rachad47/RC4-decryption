@@ -15,5 +15,29 @@ module ksa (
 
     assign clk = CLOCK_50;
     assign reset_n = KEY[3];
+
+    s_memory s_memory_inst (
+        .address(address),
+        .clock(CLOCK_50),
+        .data(data),
+        .wren(wen),
+        .q()
+    );
+
+    //FSM1 - Memory Initialization
+
+    wire finish, init_mem_handler,wen;
+    wire [7:0] data, address;
+
+    meme_init meme_init_inst (
+        .clk(clk), .state_start(reset_n),  
+
+        //.finish(),
+        //.init_mem_handler(),
+        .data(data),
+        .address(address),
+        //.memory_sel(),
+        .wen(wen)
+    );
     
 endmodule

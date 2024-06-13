@@ -35,11 +35,11 @@ module memory_handler (
     // for decrypted message RAM
     output logic wren_d,
     output logic [7:0] data_d,
-    output logic [4:0] address_decrypt,
+    output logic [4:0] address_decrypt_d,  //I changed that casue same name was declared above
 
     // for encrypted message ROM
     input logic [7:0] q_m,
-    output logic [4:0] address_m,
+    output logic [4:0] address_m
 );
     
 always_comb begin
@@ -56,7 +56,7 @@ always_comb begin
                 address_decrypt = 0;
                 address_m = 0;
             end 
-            default: 
+            // default: 
         endcase
     end
 end

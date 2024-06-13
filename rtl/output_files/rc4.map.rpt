@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rc4
-Wed Jun 12 21:51:19 2024
+Wed Jun 12 22:41:12 2024
 Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
 
 
@@ -9,15 +9,8 @@ Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
   1. Legal Notice
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
-  4. Analysis & Synthesis Default Parameter Settings
-  5. Parallel Compilation
-  6. Analysis & Synthesis Source Files Read
-  7. Analysis & Synthesis Resource Usage Summary
-  8. Analysis & Synthesis Resource Utilization by Entity
-  9. General Register Statistics
- 10. Post-Synthesis Netlist Statistics for Top Partition
- 11. Elapsed Time Per Partition
- 12. Analysis & Synthesis Messages
+  4. Parallel Compilation
+  5. Analysis & Synthesis Messages
 
 
 
@@ -41,27 +34,22 @@ agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                  ;
-+---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jun 12 21:51:19 2024       ;
-; Quartus Prime Version           ; 16.1.2 Build 203 01/18/2017 SJ Lite Edition ;
-; Revision Name                   ; rc4                                         ;
-; Top-level Entity Name           ; ksa                                         ;
-; Family                          ; Cyclone V                                   ;
-; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 0                                           ;
-; Total pins                      ; 67                                          ;
-; Total virtual pins              ; 0                                           ;
-; Total block memory bits         ; 0                                           ;
-; Total DSP Blocks                ; 0                                           ;
-; Total HSSI RX PCSs              ; 0                                           ;
-; Total HSSI PMA RX Deserializers ; 0                                           ;
-; Total HSSI TX PCSs              ; 0                                           ;
-; Total HSSI PMA TX Serializers   ; 0                                           ;
-; Total PLLs                      ; 0                                           ;
-; Total DLLs                      ; 0                                           ;
-+---------------------------------+---------------------------------------------+
++---------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                              ;
++-----------------------------+---------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Wed Jun 12 22:41:12 2024           ;
+; Quartus Prime Version       ; 16.1.2 Build 203 01/18/2017 SJ Lite Edition ;
+; Revision Name               ; rc4                                         ;
+; Top-level Entity Name       ; ksa                                         ;
+; Family                      ; Cyclone V                                   ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
+; Total registers             ; N/A until Partition Merge                   ;
+; Total pins                  ; N/A until Partition Merge                   ;
+; Total virtual pins          ; N/A until Partition Merge                   ;
+; Total block memory bits     ; N/A until Partition Merge                   ;
+; Total PLLs                  ; N/A until Partition Merge                   ;
+; Total DLLs                  ; N/A until Partition Merge                   ;
++-----------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -152,15 +140,6 @@ agreement for further details.
 +---------------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+-------------------------------------------------+
-; Analysis & Synthesis Default Parameter Settings ;
-+------+------------------------------------------+
-; Name ; Setting                                  ;
-+------+------------------------------------------+
-;      ; RESTRUCTURE                              ;
-+------+------------------------------------------+
-
-
 +------------------------------------------+
 ; Parallel Compilation                     ;
 +----------------------------+-------------+
@@ -177,208 +156,39 @@ agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                            ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                     ; Library ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
-; ksa.vhd                          ; yes             ; User VHDL File  ; C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd ;         ;
-+----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
-
-
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimate of Logic utilization (ALMs needed) ; 0        ;
-;                                             ;          ;
-; Combinational ALUT usage for logic          ; 0        ;
-;     -- 7 input functions                    ; 0        ;
-;     -- 6 input functions                    ; 0        ;
-;     -- 5 input functions                    ; 0        ;
-;     -- 4 input functions                    ; 0        ;
-;     -- <=3 input functions                  ; 0        ;
-;                                             ;          ;
-; Dedicated logic registers                   ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 67       ;
-;                                             ;          ;
-; Total DSP Blocks                            ; 0        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; CLOCK_50 ;
-; Maximum fan-out                             ; 1        ;
-; Total fan-out                               ; 67       ;
-; Average fan-out                             ; 0.50     ;
-+---------------------------------------------+----------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-; |ksa                       ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 67   ; 0            ; |ksa                ; ksa         ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 1                           ;
-;     normal            ; 1                           ;
-;         0 data inputs ; 1                           ;
-; boundary_port         ; 67                          ;
-;                       ;                             ;
-; Max LUT depth         ; 0.00                        ;
-; Average LUT depth     ; 0.00                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
-    Info: Processing started: Wed Jun 12 21:51:09 2024
+    Info: Processing started: Wed Jun 12 22:41:04 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rc4 -c rc4
 Info (125069): Default assignment values were changed in the current version of the Quartus Prime software -- changes to default assignments values are contained in file c:/intelfpga_lite/16.1/quartus/bin64/assignment_defaults.qdf
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
-Info (12021): Found 2 design units, including 1 entities, in source file ksa.vhd
-    Info (12022): Found design unit 1: ksa-rtl File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 19
-    Info (12023): Found entity 1: ksa File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file memory_handler.v
+    Info (12023): Found entity 1: memory_handler File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/memory_handler.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file mem_init.v
+    Info (12023): Found entity 1: meme_init File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/mem_init.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ksa.v
+    Info (12023): Found entity 1: ksa File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file s_memory.v
     Info (12023): Found entity 1: s_memory File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/s_memory.v Line: 40
+Error (10231): Verilog HDL error at memory_handler.v(56): value cannot be assigned to input "address_decrypt" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/memory_handler.v Line: 56
 Info (12127): Elaborating entity "ksa" for the top level hierarchy
-Warning (10541): VHDL Signal Declaration warning at ksa.vhd(10): used implicit default value for signal "LEDR" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 10
-Warning (10541): VHDL Signal Declaration warning at ksa.vhd(11): used implicit default value for signal "HEX0" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 11
-Warning (10541): VHDL Signal Declaration warning at ksa.vhd(12): used implicit default value for signal "HEX1" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 12
-Warning (10541): VHDL Signal Declaration warning at ksa.vhd(13): used implicit default value for signal "HEX2" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 13
-Warning (10541): VHDL Signal Declaration warning at ksa.vhd(14): used implicit default value for signal "HEX3" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 14
-Warning (10541): VHDL Signal Declaration warning at ksa.vhd(15): used implicit default value for signal "HEX4" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 15
-Warning (10541): VHDL Signal Declaration warning at ksa.vhd(16): used implicit default value for signal "HEX5" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 16
-Warning (10036): Verilog HDL or VHDL warning at ksa.vhd(29): object "clk" assigned a value but never read File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 29
-Warning (10036): Verilog HDL or VHDL warning at ksa.vhd(29): object "reset_n" assigned a value but never read File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 29
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 10
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 10
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 10
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 10
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 10
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 10
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 10
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 10
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 10
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 10
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 11
-    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 11
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 11
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 11
-    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 11
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 11
-    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 11
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 12
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 12
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 12
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 12
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 12
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 12
-    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 12
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 13
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 13
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 13
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 13
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 13
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 13
-    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 13
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 14
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 14
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 14
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 14
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 14
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 14
-    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 14
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 15
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 15
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 15
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 15
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 15
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 15
-    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 15
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 16
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 16
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 16
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 16
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 16
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 16
-    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 16
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (15752): Ignored 12 Virtual Pin logic option assignments
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[6]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[0]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[4]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[7]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[1]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_RS".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[3]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_EN".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[2]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[5]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_ON".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_RW".
-Warning (21074): Design contains 15 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "CLOCK_50" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 7
-    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 8
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 8
-    Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 8
-    Warning (15610): No output dependent on input pin "KEY[3]" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 8
-    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 9
-    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 9
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 9
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 9
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 9
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 9
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 9
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 9
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 9
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.vhd Line: 9
-Info (21057): Implemented 67 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 15 input pins
-    Info (21059): Implemented 52 output pins
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 92 warnings
-    Info: Peak virtual memory: 4859 megabytes
-    Info: Processing ended: Wed Jun 12 21:51:19 2024
-    Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:08
+Warning (10034): Output port "LEDR" at ksa.v(5) has no driver File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 5
+Warning (10034): Output port "HEX0" at ksa.v(6) has no driver File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 6
+Warning (10034): Output port "HEX1" at ksa.v(7) has no driver File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 7
+Warning (10034): Output port "HEX2" at ksa.v(8) has no driver File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 8
+Warning (10034): Output port "HEX3" at ksa.v(9) has no driver File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 9
+Warning (10034): Output port "HEX4" at ksa.v(10) has no driver File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 10
+Warning (10034): Output port "HEX5" at ksa.v(12) has no driver File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 12
+Error (12153): Can't elaborate top-level user hierarchy
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 8 warnings
+    Error: Peak virtual memory: 4769 megabytes
+    Error: Processing ended: Wed Jun 12 22:41:12 2024
+    Error: Elapsed time: 00:00:08
+    Error: Total CPU time (on all processors): 00:00:08
 
 

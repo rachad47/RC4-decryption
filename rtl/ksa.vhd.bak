@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity NO_ksa is       -- I changed that cause we can't have 2 entities with the same name
+entity ksa is
   port(
     CLOCK_50            : in  std_logic;  -- Clock pin
     KEY                 : in  std_logic_vector(3 downto 0);  -- push button switches
@@ -14,9 +14,9 @@ entity NO_ksa is       -- I changed that cause we can't have 2 entities with the
     HEX3 : out std_logic_vector(6 downto 0);
     HEX4 : out std_logic_vector(6 downto 0);
     HEX5 : out std_logic_vector(6 downto 0));
-end NO_ksa;
+end ksa;
 
-architecture rtl of NO_ksa is
+architecture rtl of ksa is
    COMPONENT SevenSegmentDisplayDecoder IS
     PORT
     (
