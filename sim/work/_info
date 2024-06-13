@@ -1,0 +1,58 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/CPEN311/homework3
+vmemory_handler
+Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
+Z1 !s110 1718312496
+!i10b 1
+!s100 8i0o_2kl_VBI<4bMoJmE>0
+I5b>z<zgz@o^P7^VI=g_0K2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s105 memory_handler_sv_unit
+S1
+Z3 dC:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim
+w1718311273
+8C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/memory_handler.sv
+FC:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/memory_handler.sv
+L0 1
+Z4 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1718312496.000000
+!s107 C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/memory_handler.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/memory_handler.sv|
+!i113 1
+Z5 o-work work -sv
+Z6 tCvgOpt 0
+vtest_memory_handler
+R0
+R1
+!i10b 1
+!s100 6iVFAZ>Wl^0`;CdiRb[0H0
+Ic9UD[HA60McDP;[YY]Q>F2
+R2
+!s105 test_memory_handler_sv_unit
+S1
+R3
+w1718312453
+8C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_memory_handler.sv
+FC:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_memory_handler.sv
+L0 2
+R4
+r1
+!s85 0
+31
+!s108 1718312495.000000
+!s107 C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_memory_handler.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_memory_handler.sv|
+!i113 1
+R5
+R6
