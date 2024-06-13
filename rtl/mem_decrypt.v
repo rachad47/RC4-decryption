@@ -1,6 +1,7 @@
 module mem_decrypt (
     input clk,
     input start,
+    input reset,
     input logic [23:0] secret_key,
     input logic [7:0] q_data,
 
@@ -31,5 +32,15 @@ parameter increment_i = 7'b1011_010;
 parameter finished = 7'b1100_110;
 parameter start = 7'b1101_000;
 
+logic [6:0] state, next_state;
+
+assign finish = state[2];
+assign decrypt_mem_handler = state[1];
+assign wen = state[0];
+
+always_ff @ (posedge clk, posedge reset ) begin
+    if (reset) state <= idle;
+    else       state <= next_state;
+end
     
 endmodule
