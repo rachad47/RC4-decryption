@@ -43,20 +43,46 @@ module memory_handler (
 );
     
 always_comb begin
-    if (wren_init) begin
+    // Check if we are in init memory stage
+    if (start_init) begin
         case (mem_sel_init)
+            // WORKING RAM
             2'b01: begin
+                // read from working RAM
                 wren = wren_init;
                 data = data_init;
                 address = address_init;
+
+                // Everything else is not used
                 output_data_decrypt = 0;
-                output_data_decrypt = 0;
+                output_data_shuffle = 0;
                 wren_d = 0;
                 data_d = 0;
-                address_decrypt = 0;
+                address_decrypt_d = 0;
                 address_m = 0;
             end 
-            // default: 
+            default: begin
+                // SHOULD NEVER REACH HERE
+                output_data_decrypt = 1'b0;
+                output_data_shuffle = 1'b0;
+                wren_d = 1'b0;
+                data_d = 1'b0;
+                address_decrypt_d = 1'b0;
+                address_m = 1'b0;
+                wren = 1'b0;
+                data = 1'b0;
+                address = 1'b0; 
+            end
+        endcase
+    end
+    // Check if we are in shuffle stage
+    else if (start_shuffle) begin
+        case (mem_sel_shuffle)
+            // Working 
+            2'b01: begin
+                address = 0;
+            end 
+            default: address = 0;
         endcase
     end
 end
