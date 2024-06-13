@@ -12,51 +12,73 @@ module mem_shuffle (
 );
     logic [8:0] i,j; // i as internal signal
     
-    localparam START = 3b'1_00;
-    localparam SHUFFLE = 3b'1_01;
-    localparam FINISH = 3b'0_10;
+    localparam START = 3b'000;
+    localparam READ_i = 3b'001;
+    localparam ADD = 3b'010;
+    localparam READ_j = 3b'011;
+    localparam CHANGE_i = 3b'100;       //CHANGE_i & CHANGE_j for SWAP
+    localparam CHANGE_j = 3b'101;
+    localparam FINISH = 3b'110;
 
     logic [2:0] state;
-    assign shuffle_mem_handler = state[2];
     logic [7:0] temp_i, temp_j;
 
-
     always_ff @(posedge clk) begin
-        case (state)
-            START: begin
-                i <= 9'h00;
-                j <= 9'h00;
-                shuffle_mem_handler <= 1;
-                memory_sel <= 2'b01;
-                finish <= 0;
-                state <= SHUFFLE;
-            end
-            SHUFFLE: begin
-                if (i == 9'h100) begin
-                    state <= FINISH;
-                end else begin
+        if (state_start) begin
+            state <= START;
+            i <= 0;
+            j <= 0;
+        end else begin
+            case (state)
+                START: begin
+                    state <= READ_i;
+                    address <= i;
+                    memory_sel <= 2'b01;
+                    wen <= 1;
+                end
+                READ_i: begin
+                    state <= ADD;
                     address <= i;
                     temp_i <= q_data;
-                    j <= j + temp + secret_key[i % 24];
-                    // swap 
-                    wen <= 1;
+                end
+                ADD: begin
+                    state <= READ_j;
+                    j <= j + temp_i + secret_key[i%24]; 
+                end
+                READ_j: begin
+                    state <= CHANGE_i;
                     address <= j;
                     temp_j <= q_data;
-                    data <= temp_i;
+                end
+                CHANGE_i: begin
+                    state <= CHANGE_j;
                     address <= i;
                     data <= temp_j;
-                    i <= i + 1;
+                end
+                CHANGE_j: begin
+                    state <= FINISH;
+                    address <= j;
+                    data <= temp_i;
+                end
+                FINISH: begin
+                    if (i == 255) begin
+                        finish <= 1;
+                        shuffle_mem_handler <= 0;
+                        memory_sel <= 2'b00;
+                    end else begin
+                        state <= START;
+                        i <= i + 1;
+                    end
+                    
                     
                 end
-            end
-            FINISH: begin
-                finish <= 1;
-                wen <= 0;
-                shuffle_mem_handler <= 0;
-                memory_sel <= 2'b00;
-            end
-        endcase
+            endcase
+        end
     end
+
+
+
+
     
 
 
