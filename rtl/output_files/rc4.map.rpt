@@ -1,5 +1,5 @@
 Analysis & Synthesis report for rc4
-Thu Jun 13 15:12:26 2024
+Thu Jun 13 15:18:16 2024
 Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
 
 
@@ -26,12 +26,11 @@ Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
  18. altsyncram Parameter Settings by Entity Instance
  19. Port Connectivity Checks: "mem_shuffle:memory_shuffle_inst"
  20. Port Connectivity Checks: "memory_handler:memory_block_router"
- 21. Port Connectivity Checks: "s_memory:s_memory_inst"
- 22. In-System Memory Content Editor Settings
- 23. Post-Synthesis Netlist Statistics for Top Partition
- 24. Elapsed Time Per Partition
- 25. Analysis & Synthesis Messages
- 26. Analysis & Synthesis Suppressed Messages
+ 21. In-System Memory Content Editor Settings
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
+ 25. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -58,13 +57,13 @@ agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Thu Jun 13 15:12:26 2024       ;
+; Analysis & Synthesis Status     ; Successful - Thu Jun 13 15:18:16 2024       ;
 ; Quartus Prime Version           ; 16.1.2 Build 203 01/18/2017 SJ Lite Edition ;
 ; Revision Name                   ; rc4                                         ;
 ; Top-level Entity Name           ; ksa                                         ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 165                                         ;
+; Total registers                 ; 189                                         ;
 ; Total pins                      ; 67                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 2,048                                       ;
@@ -239,16 +238,16 @@ agreement for further details.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 160                      ;
+; Estimate of Logic utilization (ALMs needed) ; 170                      ;
 ;                                             ;                          ;
-; Combinational ALUT usage for logic          ; 269                      ;
+; Combinational ALUT usage for logic          ; 281                      ;
 ;     -- 7 input functions                    ; 1                        ;
 ;     -- 6 input functions                    ; 29                       ;
-;     -- 5 input functions                    ; 46                       ;
-;     -- 4 input functions                    ; 37                       ;
-;     -- <=3 input functions                  ; 156                      ;
+;     -- 5 input functions                    ; 54                       ;
+;     -- 4 input functions                    ; 47                       ;
+;     -- <=3 input functions                  ; 150                      ;
 ;                                             ;                          ;
-; Dedicated logic registers                   ; 165                      ;
+; Dedicated logic registers                   ; 189                      ;
 ;                                             ;                          ;
 ; I/O pins                                    ; 67                       ;
 ; Total MLAB memory bits                      ; 0                        ;
@@ -258,8 +257,8 @@ agreement for further details.
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
 ; Maximum fan-out                             ; 156                      ;
-; Total fan-out                               ; 1748                     ;
-; Average fan-out                             ; 2.99                     ;
+; Total fan-out                               ; 1912                     ;
+; Average fan-out                             ; 3.08                     ;
 +---------------------------------------------+--------------------------+
 
 
@@ -268,14 +267,14 @@ agreement for further details.
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                                              ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                             ; Entity Name                       ; Library Name ;
 +-----------------------------------------------------------------------------------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------+--------------+
-; |ksa                                                                                                                                    ; 269 (1)             ; 165 (0)                   ; 2048              ; 0          ; 67   ; 0            ; |ksa                                                                                                                                                                                                                                                                                                                                            ; ksa                               ; work         ;
-;    |mem_shuffle:memory_shuffle_inst|                                                                                                    ; 96 (33)             ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |ksa|mem_shuffle:memory_shuffle_inst                                                                                                                                                                                                                                                                                                            ; mem_shuffle                       ; work         ;
+; |ksa                                                                                                                                    ; 281 (1)             ; 189 (0)                   ; 2048              ; 0          ; 67   ; 0            ; |ksa                                                                                                                                                                                                                                                                                                                                            ; ksa                               ; work         ;
+;    |mem_shuffle:memory_shuffle_inst|                                                                                                    ; 100 (37)            ; 54 (54)                   ; 0                 ; 0          ; 0    ; 0            ; |ksa|mem_shuffle:memory_shuffle_inst                                                                                                                                                                                                                                                                                                            ; mem_shuffle                       ; work         ;
 ;       |lpm_divide:Mod0|                                                                                                                 ; 63 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ksa|mem_shuffle:memory_shuffle_inst|lpm_divide:Mod0                                                                                                                                                                                                                                                                                            ; lpm_divide                        ; work         ;
 ;          |lpm_divide_a2m:auto_generated|                                                                                                ; 63 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ksa|mem_shuffle:memory_shuffle_inst|lpm_divide:Mod0|lpm_divide_a2m:auto_generated                                                                                                                                                                                                                                                              ; lpm_divide_a2m                    ; work         ;
 ;             |sign_div_unsign_dkh:divider|                                                                                               ; 63 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ksa|mem_shuffle:memory_shuffle_inst|lpm_divide:Mod0|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider                                                                                                                                                                                                                                  ; sign_div_unsign_dkh               ; work         ;
 ;                |alt_u_div_0te:divider|                                                                                                  ; 63 (63)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ksa|mem_shuffle:memory_shuffle_inst|lpm_divide:Mod0|lpm_divide_a2m:auto_generated|sign_div_unsign_dkh:divider|alt_u_div_0te:divider                                                                                                                                                                                                            ; alt_u_div_0te                     ; work         ;
 ;    |meme_init:meme_init_inst|                                                                                                           ; 14 (14)             ; 11 (11)                   ; 0                 ; 0          ; 0    ; 0            ; |ksa|meme_init:meme_init_inst                                                                                                                                                                                                                                                                                                                   ; meme_init                         ; work         ;
-;    |memory_handler:memory_block_router|                                                                                                 ; 16 (16)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ksa|memory_handler:memory_block_router                                                                                                                                                                                                                                                                                                         ; memory_handler                    ; work         ;
+;    |memory_handler:memory_block_router|                                                                                                 ; 24 (24)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ksa|memory_handler:memory_block_router                                                                                                                                                                                                                                                                                                         ; memory_handler                    ; work         ;
 ;    |s_memory:s_memory_inst|                                                                                                             ; 41 (0)              ; 37 (0)                    ; 2048              ; 0          ; 0    ; 0            ; |ksa|s_memory:s_memory_inst                                                                                                                                                                                                                                                                                                                     ; s_memory                          ; work         ;
 ;       |altsyncram:altsyncram_component|                                                                                                 ; 41 (0)              ; 37 (0)                    ; 2048              ; 0          ; 0    ; 0            ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component                                                                                                                                                                                                                                                                                     ; altsyncram                        ; work         ;
 ;          |altsyncram_2d32:auto_generated|                                                                                               ; 41 (0)              ; 37 (0)                    ; 2048              ; 0          ; 0    ; 0            ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_2d32:auto_generated                                                                                                                                                                                                                                                      ; altsyncram_2d32                   ; work         ;
@@ -322,13 +321,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
 ; Register name                                                                                                                                  ; Reason for Removal                                    ;
 +------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
-; mem_shuffle:memory_shuffle_inst|temp_i[0..7]                                                                                                   ; Stuck at GND due to stuck port data_in                ;
 ; meme_init:meme_init_inst|memory_sel[0]                                                                                                         ; Merged with meme_init:meme_init_inst|init_mem_handler ;
 ; meme_init:meme_init_inst|memory_sel[1]                                                                                                         ; Stuck at GND due to stuck port data_in                ;
 ; mem_shuffle:memory_shuffle_inst|memory_sel[1]                                                                                                  ; Stuck at GND due to stuck port data_in                ;
 ; mem_shuffle:memory_shuffle_inst|j[8]                                                                                                           ; Lost fanout                                           ;
 ; s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_2d32:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3] ; Stuck at GND due to stuck port data_in                ;
-; Total Number of Removed Registers = 13                                                                                                         ;                                                       ;
+; Total Number of Removed Registers = 5                                                                                                          ;                                                       ;
 +------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
 
 
@@ -337,12 +335,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 165   ;
+; Total registers                              ; 189   ;
 ; Number of registers using Synchronous Clear  ; 35    ;
-; Number of registers using Synchronous Load   ; 25    ;
+; Number of registers using Synchronous Load   ; 33    ;
 ; Number of registers using Asynchronous Clear ; 54    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 127   ;
+; Number of registers using Clock Enable       ; 151   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -363,18 +361,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                                              ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_2d32:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[1]                                                ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_2d32:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[2]                                     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_2d32:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[0]                                                ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |ksa|meme_init:meme_init_inst|i[0]                                                                                                                                                      ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |ksa|mem_shuffle:memory_shuffle_inst|j[3]                                                                                                                                               ;
-; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |ksa|mem_shuffle:memory_shuffle_inst|i[4]                                                                                                                                               ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_2d32:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[2] ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |ksa|mem_shuffle:memory_shuffle_inst|address[1]                                                                                                                                         ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; Yes        ; |ksa|mem_shuffle:memory_shuffle_inst|memory_sel[0]                                                                                                                                      ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_2d32:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_reg[0]                                                ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_2d32:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_data_shift_cntr_reg[3]                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_2d32:auto_generated|sld_mod_ram_rom:mgl_prim2|ram_rom_addr_reg[3]                                                ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |ksa|meme_init:meme_init_inst|i[8]                                                                                                                                                      ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |ksa|mem_shuffle:memory_shuffle_inst|j[0]                                                                                                                                               ;
+; 3:1                ; 9 bits    ; 18 LEs        ; 0 LEs                ; 18 LEs                 ; Yes        ; |ksa|mem_shuffle:memory_shuffle_inst|i[3]                                                                                                                                               ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_2d32:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|word_counter[4] ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |ksa|mem_shuffle:memory_shuffle_inst|data[0]                                                                                                                                            ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |ksa|mem_shuffle:memory_shuffle_inst|address[7]                                                                                                                                         ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 2 LEs                ; 10 LEs                 ; Yes        ; |ksa|mem_shuffle:memory_shuffle_inst|memory_sel[1]                                                                                                                                      ;
 ; 10:1               ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |ksa|mem_shuffle:memory_shuffle_inst|state[2]                                                                                                                                           ;
 ; 26:1               ; 4 bits    ; 68 LEs        ; 40 LEs               ; 28 LEs                 ; Yes        ; |ksa|s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_2d32:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr|WORD_SR[0]      ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ksa|memory_handler:memory_block_router|address[2]                                                                                                                                      ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |ksa|memory_handler:memory_block_router|address[4]                                                                                                                                      ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |ksa|memory_handler:memory_block_router|output_data_shuffle[5]                                                                                                                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
@@ -491,45 +491,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+--------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mem_shuffle:memory_shuffle_inst"                                                                                       ;
-+--------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; Port               ; Type   ; Severity ; Details                                                                                                  ;
-+--------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
-; finish             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                      ;
-; secret_key[23..10] ; Input  ; Info     ; Stuck at GND                                                                                             ;
-; data               ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed. ;
-+--------------------+--------+----------+----------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "mem_shuffle:memory_shuffle_inst"                                                                  ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port               ; Type   ; Severity ; Details                                                                             ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
+; finish             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; secret_key[23..10] ; Input  ; Info     ; Stuck at GND                                                                        ;
++--------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "memory_handler:memory_block_router"                                                                                                                      ;
-+---------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Port                ; Type   ; Severity ; Details                                                                                                                                   ;
-+---------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
-; data_decrypt        ; Input  ; Info     ; Explicitly unconnected                                                                                                                    ;
-; wren_decrypt        ; Input  ; Info     ; Explicitly unconnected                                                                                                                    ;
-; address_decrypt     ; Input  ; Info     ; Explicitly unconnected                                                                                                                    ;
-; mem_sel_decrypt     ; Input  ; Info     ; Explicitly unconnected                                                                                                                    ;
-; start_decrypt       ; Input  ; Info     ; Explicitly unconnected                                                                                                                    ;
-; output_data_decrypt ; Output ; Info     ; Explicitly unconnected                                                                                                                    ;
-; q                   ; Input  ; Warning  ; Input port expression (1 bits) is smaller than the input port (8 bits) it drives.  Extra input bit(s) "q[7..1]" will be connected to GND. ;
-; wren                ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                       ;
-; wren_d              ; Output ; Info     ; Explicitly unconnected                                                                                                                    ;
-; data_d              ; Output ; Info     ; Explicitly unconnected                                                                                                                    ;
-; address_d           ; Output ; Info     ; Explicitly unconnected                                                                                                                    ;
-; q_m                 ; Input  ; Info     ; Explicitly unconnected                                                                                                                    ;
-; address_m           ; Output ; Info     ; Explicitly unconnected                                                                                                                    ;
-+---------------------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------+
-; Port Connectivity Checks: "s_memory:s_memory_inst" ;
-+------+--------+----------+-------------------------+
-; Port ; Type   ; Severity ; Details                 ;
-+------+--------+----------+-------------------------+
-; q    ; Output ; Info     ; Explicitly unconnected  ;
-+------+--------+----------+-------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "memory_handler:memory_block_router"                                                                ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                ; Type   ; Severity ; Details                                                                             ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
+; data_decrypt        ; Input  ; Info     ; Explicitly unconnected                                                              ;
+; wren_decrypt        ; Input  ; Info     ; Explicitly unconnected                                                              ;
+; address_decrypt     ; Input  ; Info     ; Explicitly unconnected                                                              ;
+; mem_sel_decrypt     ; Input  ; Info     ; Explicitly unconnected                                                              ;
+; start_decrypt       ; Input  ; Info     ; Explicitly unconnected                                                              ;
+; output_data_decrypt ; Output ; Info     ; Explicitly unconnected                                                              ;
+; wren                ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; wren_d              ; Output ; Info     ; Explicitly unconnected                                                              ;
+; data_d              ; Output ; Info     ; Explicitly unconnected                                                              ;
+; address_d           ; Output ; Info     ; Explicitly unconnected                                                              ;
+; q_m                 ; Input  ; Info     ; Explicitly unconnected                                                              ;
+; address_m           ; Output ; Info     ; Explicitly unconnected                                                              ;
++---------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -546,30 +535,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 78                          ;
+; arriav_ff             ; 102                         ;
 ;     CLR               ; 5                           ;
-;     ENA               ; 10                          ;
+;     ENA               ; 26                          ;
 ;     ENA CLR           ; 7                           ;
 ;     ENA CLR SLD       ; 8                           ;
 ;     ENA SCLR          ; 26                          ;
-;     ENA SLD           ; 16                          ;
+;     ENA SLD           ; 24                          ;
 ;     SCLR              ; 2                           ;
 ;     plain             ; 4                           ;
-; arriav_lcell_comb     ; 168                         ;
-;     arith             ; 66                          ;
+; arriav_lcell_comb     ; 180                         ;
+;     arith             ; 67                          ;
 ;         0 data inputs ; 8                           ;
-;         1 data inputs ; 37                          ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 13                          ;
+;         1 data inputs ; 30                          ;
+;         2 data inputs ; 11                          ;
+;         3 data inputs ; 12                          ;
 ;         4 data inputs ; 6                           ;
 ;     extend            ; 1                           ;
 ;         7 data inputs ; 1                           ;
-;     normal            ; 95                          ;
+;     normal            ; 106                         ;
 ;         0 data inputs ; 1                           ;
-;         2 data inputs ; 23                          ;
-;         3 data inputs ; 16                          ;
-;         4 data inputs ; 14                          ;
-;         5 data inputs ; 27                          ;
+;         2 data inputs ; 15                          ;
+;         3 data inputs ; 17                          ;
+;         4 data inputs ; 24                          ;
+;         5 data inputs ; 35                          ;
 ;         6 data inputs ; 14                          ;
 ;     shared            ; 6                           ;
 ;         0 data inputs ; 1                           ;
@@ -577,8 +566,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; boundary_port         ; 94                          ;
 ; stratixv_ram_block    ; 8                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 13.10                       ;
-; Average LUT depth     ; 5.21                        ;
+; Max LUT depth         ; 13.20                       ;
+; Average LUT depth     ; 4.78                        ;
 +-----------------------+-----------------------------+
 
 
@@ -597,7 +586,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
-    Info: Processing started: Thu Jun 13 15:12:06 2024
+    Info: Processing started: Thu Jun 13 15:17:55 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off rc4 -c rc4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -608,8 +597,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file ksa.v
     Info (12023): Found entity 1: ksa File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file s_memory.v
     Info (12023): Found entity 1: s_memory File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/s_memory.v Line: 40
-Warning (10236): Verilog HDL Implicit Net warning at ksa.v(25): created implicit net for "wen" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 25
-Warning (10236): Verilog HDL Implicit Net warning at ksa.v(53): created implicit net for "q" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 53
+Warning (10236): Verilog HDL Implicit Net warning at ksa.v(26): created implicit net for "wen" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 26
 Info (12127): Elaborating entity "ksa" for the top level hierarchy
 Warning (10034): Output port "LEDR" at ksa.v(5) has no driver File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 5
 Warning (10034): Output port "HEX0" at ksa.v(6) has no driver File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 6
@@ -618,7 +606,7 @@ Warning (10034): Output port "HEX2" at ksa.v(8) has no driver File: C:/Users/Rac
 Warning (10034): Output port "HEX3" at ksa.v(9) has no driver File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 9
 Warning (10034): Output port "HEX4" at ksa.v(10) has no driver File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 10
 Warning (10034): Output port "HEX5" at ksa.v(12) has no driver File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 12
-Info (12128): Elaborating entity "s_memory" for hierarchy "s_memory:s_memory_inst" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 27
+Info (12128): Elaborating entity "s_memory" for hierarchy "s_memory:s_memory_inst" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 28
 Info (12128): Elaborating entity "altsyncram" for hierarchy "s_memory:s_memory_inst|altsyncram:altsyncram_component" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/s_memory.v Line: 86
 Info (12130): Elaborated megafunction instantiation "s_memory:s_memory_inst|altsyncram:altsyncram_component" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/s_memory.v Line: 86
 Info (12133): Instantiated megafunction "s_memory:s_memory_inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/s_memory.v Line: 86
@@ -659,16 +647,16 @@ Info (12128): Elaborating entity "sld_jtag_endpoint_adapter_impl" for hierarchy 
 Info (12128): Elaborating entity "sld_rom_sr" for hierarchy "s_memory:s_memory_inst|altsyncram:altsyncram_component|altsyncram_2d32:auto_generated|sld_mod_ram_rom:mgl_prim2|sld_rom_sr:\ram_rom_logic_gen:name_gen:info_rom_sr" File: c:/intelfpga_lite/16.1/quartus/libraries/megafunctions/sld_mod_ram_rom.vhd Line: 828
 Warning (12125): Using design file memory_handler.sv, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: memory_handler File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/memory_handler.sv Line: 1
-Info (12128): Elaborating entity "memory_handler" for hierarchy "memory_handler:memory_block_router" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 64
+Info (12128): Elaborating entity "memory_handler" for hierarchy "memory_handler:memory_block_router" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 65
 Warning (10230): Verilog HDL assignment warning at memory_handler.sv(131): truncated value with size 8 to match size of target (5) File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/memory_handler.sv Line: 131
 Warning (10230): Verilog HDL assignment warning at memory_handler.sv(145): truncated value with size 8 to match size of target (5) File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/memory_handler.sv Line: 145
-Info (12128): Elaborating entity "meme_init" for hierarchy "meme_init:meme_init_inst" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 80
+Info (12128): Elaborating entity "meme_init" for hierarchy "meme_init:meme_init_inst" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 81
 Warning (10230): Verilog HDL assignment warning at mem_init.v(29): truncated value with size 32 to match size of target (9) File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/mem_init.v Line: 29
 Warning (10230): Verilog HDL assignment warning at mem_init.v(36): truncated value with size 9 to match size of target (8) File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/mem_init.v Line: 36
 Warning (10230): Verilog HDL assignment warning at mem_init.v(37): truncated value with size 9 to match size of target (8) File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/mem_init.v Line: 37
 Warning (12125): Using design file mem_shuffle.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: mem_shuffle File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/mem_shuffle.v Line: 1
-Info (12128): Elaborating entity "mem_shuffle" for hierarchy "mem_shuffle:memory_shuffle_inst" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 99
+Info (12128): Elaborating entity "mem_shuffle" for hierarchy "mem_shuffle:memory_shuffle_inst" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 100
 Warning (10230): Verilog HDL assignment warning at mem_shuffle.v(34): truncated value with size 9 to match size of target (8) File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/mem_shuffle.v Line: 34
 Warning (10230): Verilog HDL assignment warning at mem_shuffle.v(41): truncated value with size 9 to match size of target (8) File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/mem_shuffle.v Line: 41
 Warning (10230): Verilog HDL assignment warning at mem_shuffle.v(54): truncated value with size 9 to match size of target (8) File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/mem_shuffle.v Line: 54
@@ -676,7 +664,7 @@ Warning (10230): Verilog HDL assignment warning at mem_shuffle.v(60): truncated 
 Warning (10230): Verilog HDL assignment warning at mem_shuffle.v(68): truncated value with size 9 to match size of target (8) File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/mem_shuffle.v Line: 68
 Warning (10230): Verilog HDL assignment warning at mem_shuffle.v(83): truncated value with size 32 to match size of target (9) File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/mem_shuffle.v Line: 83
 Info (11170): Starting IP generation for the debug fabric: alt_sld_fab.
-Info (11172): 2024.06.13.15:12:18 Progress: Loading sld73f98f60/alt_sld_fab_wrapper_hw.tcl
+Info (11172): 2024.06.13.15:18:08 Progress: Loading sld73f98f60/alt_sld_fab_wrapper_hw.tcl
 Info (11172): Alt_sld_fab.alt_sld_fab: SLD fabric agents which did not specify prefer_host were connected to JTAG
 Info (11172): Alt_sld_fab: Generating alt_sld_fab "alt_sld_fab" for QUARTUS_SYNTH
 Info (11172): Alt_sld_fab: "alt_sld_fab" instantiated alt_sld_fab "alt_sld_fab"
@@ -713,7 +701,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_dkh File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/db/sign_div_unsign_dkh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_0te.tdf
     Info (12023): Found entity 1: alt_u_div_0te File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/db/alt_u_div_0te.tdf Line: 23
-Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 5
     Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 5
@@ -773,32 +760,32 @@ Info (144001): Generated suppressed messages file C:/Users/Rachad/Desktop/CPEN31
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 9 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (15752): Ignored 12 Virtual Pin logic option assignments
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_EN".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[0]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[1]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_RW".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[2]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[7]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_RS".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[4]".
     Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[6]".
-    Warning (15751): Ignored Virtual Pin assignment to "LCD_ON".
+    Warning (15751): Ignored Virtual Pin assignment to "LCD_EN".
+    Warning (15751): Ignored Virtual Pin assignment to "LCD_RS".
+    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[1]".
     Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[3]".
+    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[2]".
+    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[4]".
+    Warning (15751): Ignored Virtual Pin assignment to "LCD_ON".
+    Warning (15751): Ignored Virtual Pin assignment to "LCD_RW".
+    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[7]".
     Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[5]".
+    Warning (15751): Ignored Virtual Pin assignment to "LCD_DATA[0]".
 Warning (21074): Design contains 3 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 3
     Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 3
     Warning (15610): No output dependent on input pin "KEY[2]" File: C:/Users/Rachad/Desktop/CPEN311/Lab4_template_de1soc/rtl/ksa.v Line: 3
-Info (21057): Implemented 400 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 436 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 18 input pins
     Info (21059): Implemented 53 output pins
-    Info (21061): Implemented 320 logic cells
+    Info (21061): Implemented 356 logic cells
     Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 95 warnings
-    Info: Peak virtual memory: 4909 megabytes
-    Info: Processing ended: Thu Jun 13 15:12:26 2024
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:17
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 93 warnings
+    Info: Peak virtual memory: 4908 megabytes
+    Info: Processing ended: Thu Jun 13 15:18:16 2024
+    Info: Elapsed time: 00:00:21
+    Info: Total CPU time (on all processors): 00:00:18
 
 
 +------------------------------------------+

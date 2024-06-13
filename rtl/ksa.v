@@ -12,8 +12,9 @@ module ksa (
 );
 
     logic clk, reset_n;
-    logic [7:0] address, data;
+    logic [7:0] address, data, q;
     logic wren;
+    
 
     assign clk = CLOCK_50;
     assign reset_n = KEY[3];
@@ -22,8 +23,8 @@ module ksa (
         .address(address),
         .clock(CLOCK_50),
         .data(data),
-        .wren(wen),
-        .q()
+        .wren(wren),
+        .q(q)
     );
 
     memory_handler memory_block_router (
@@ -90,7 +91,7 @@ module ksa (
         .clk(clk), .state_start(finish_init),
         .finish(finish_shuffle),
         .shuffle_mem_handler(shuffle_mem_handler),
-        // .data(data_shuffle),
+        .data(data_shuffle),
         .address(address_shuffle),
         .memory_sel(memory_sel_shuffle),
         .wen(wen_shuffle),
