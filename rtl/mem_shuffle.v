@@ -34,16 +34,18 @@ module mem_shuffle (
                     state <= READ_i;
                     address <= i;
                     memory_sel <= 2'b01;
-                    wen <= 1;
+                    wen <= 0;
                 end
                 READ_i: begin
                     state <= ADD;
                     address <= i;
                     temp_i <= q_data;
+                    wen <= 0;
                 end
                 ADD: begin
                     state <= READ_j;
-                    j <= j + temp_i + secret_key[i%24]; 
+                    j <= j + temp_i + secret_key[i%24];
+                    wen <= 0; 
                 end
                 READ_j: begin
                     state <= CHANGE_i;
@@ -54,17 +56,22 @@ module mem_shuffle (
                     state <= CHANGE_j;
                     address <= i;
                     data <= temp_j;
+                    wen <= 1;
+
                 end
                 CHANGE_j: begin
                     state <= FINISH;
                     address <= j;
                     data <= temp_i;
+                    wen <= 1;
+
                 end
                 FINISH: begin
                     if (i == 255) begin
                         finish <= 1;
                         shuffle_mem_handler <= 0;
                         memory_sel <= 2'b00;
+                        wen <= 0; 
                     end else begin
                         state <= START;
                         i <= i + 1;
