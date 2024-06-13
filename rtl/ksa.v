@@ -31,7 +31,6 @@ module ksa (
 
     meme_init meme_init_inst (
         .clk(clk), .state_start(reset_n),  
-
         //.finish(),
         //.init_mem_handler(),
         .data(data),
