@@ -38,51 +38,51 @@ module mem_shuffle (
                 end
                 READ_i: begin
                     state <= ADD;
-                    address <= i;
+                    address <= 8'hFA;
                     temp_i <= q_data;
                     wen <= 0;
                     shuffle_mem_handler <= 1;
                 end
                 ADD: begin
                     state <= READ_j;
-                    j <= j + temp_i + secret_key[i%24];
+                    j <= (j + temp_i + secret_key[i%24])%256;
                     wen <= 0; 
                     shuffle_mem_handler <= 1;
                 end
                 READ_j: begin
                     state <= CHANGE_i;
-                    address <= j;
+                    address <= 8'hFB;
                     temp_j <= q_data;
                     shuffle_mem_handler <= 1;
                 end
                 CHANGE_i: begin
                     state <= CHANGE_j;
-                    address <= i;
-                    data <= temp_j;
+                    // address <= 8'hFD;
+                    // data <= temp_j;
                     wen <= 1;
                     shuffle_mem_handler <= 1;
 
                 end
                 CHANGE_j: begin
                     state <= FINISH;
-                    address <= j;
-                    data <= temp_i;
+                    address <= 8'hFC;
+                    data <= 8'h10;
                     wen <= 1;
                     shuffle_mem_handler <= 1;
 
                 end
                 FINISH: begin
-                    if (i == 255) begin
+                    // if (i == 255) begin
                         finish <= 1;
                         shuffle_mem_handler <= 0;
                         memory_sel <= 2'b00;
                         wen <= 0; 
                         shuffle_mem_handler <= 0;
-                    end else begin
-                        state <= START;
-                        i <= i + 1;
-                        finish <= 0;
-                    end
+                    // end else begin
+                    //     state <= START;
+                    //     i <= i + 1;
+                    //     finish <= 0;
+                    // end
                     
                     
                 end
