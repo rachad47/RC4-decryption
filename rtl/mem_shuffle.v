@@ -38,7 +38,7 @@ module mem_shuffle (
                 end
                 READ_i: begin
                     state <= ADD;
-                    address <= 8'hFA;
+                 address <= 8'hFA;
                     temp_i <= q_data;
                     wen <= 0;
                     shuffle_mem_handler <= 1;

@@ -95,7 +95,7 @@ module ksa (
         .address(address_shuffle),
         .memory_sel(memory_sel_shuffle),
         .wen(wen_shuffle),
-        .secret_key({14'b0, SW[9:0]}),
+        .secret_key({14'b0, SW[9:0]}) ,  
         // .q_data(readdata_shuffle)
         .q_data(q)
     );
