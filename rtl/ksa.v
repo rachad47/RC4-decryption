@@ -86,7 +86,7 @@ module ksa (
     logic [7:0] data_shuffle, address_shuffle, readdata_shuffle;
     logic [1:0] memory_sel_shuffle;
     
-
+ wire [7:0]j;
     mem_shuffle memory_shuffle_inst (
         .clk(clk), .state_start(~KEY[2]),
         .finish(finish_shuffle),
@@ -95,9 +95,21 @@ module ksa (
         .address(address_shuffle),
         .memory_sel(memory_sel_shuffle),
         .wen(wen_shuffle),
-        .secret_key({14'b0, SW[9:0]}) ,  
+        .secret_key({14'b0, 10'b1001001001}) ,
+        .iterations(SW[9:0]),  
         // .q_data(readdata_shuffle)
-        .q_data(q)
+        .q_data(q),
+        .out_j(j)
     );
+
+    SevenSegmentDisplayDecoder SevenSegmentDisplayDecoder_inst1 (
+        .ssOut(HEX0),
+        .nIn(j[3:0])
+    );
+    SevenSegmentDisplayDecoder SevenSegmentDisplayDecoder_inst2 (
+        .ssOut(HEX1),
+        .nIn(j[7:4])
+    );
+
 
 endmodule

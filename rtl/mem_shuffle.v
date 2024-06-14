@@ -3,11 +3,13 @@ module mem_shuffle (
     input logic state_start,
     input logic [23:0] secret_key,
     input logic [7:0] q_data,
+    input logic [9:0] iterations,
     output logic finish, shuffle_mem_handler,
     output logic [7:0] data,
     output logic [7:0] address,
     output logic [1:0] memory_sel,
-    output logic wen
+    output logic wen,
+    output logic [7:0] out_j
 );
     logic [8:0] i, j; // i as internal signal
     
@@ -26,6 +28,7 @@ module mem_shuffle (
 
     logic [3:0] state;
     logic [7:0] temp_i, temp_j;
+    assign out_j = j; // new added
 
     always_ff @(posedge clk) begin
         if (state_start) begin
@@ -101,7 +104,7 @@ module mem_shuffle (
                 end
                 FINISH: begin
                     wen <= 0;
-                    if (i == 254) begin
+                    if (i == iterations) begin
                         finish <= 1;
                         shuffle_mem_handler <= 0;
                         memory_sel <= 2'b00;
