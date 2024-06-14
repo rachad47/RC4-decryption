@@ -11,7 +11,8 @@ module mem_shuffle (
     output logic wen,
     output logic [7:0] out_j
 );
-    logic [8:0] i, j; // i as internal signal
+    logic [7:0] i, j; // i as internal signal
+    
     
     localparam START = 4'b0000;
     localparam READ_i_SETUP = 4'b0001;
@@ -29,6 +30,11 @@ module mem_shuffle (
     logic [3:0] state;
     logic [7:0] temp_i, temp_j;
     assign out_j = j; // new added
+
+    logic [7:0] secret_key_bytes [2:0];
+    assign secret_key_bytes[0] = secret_key[23:16];
+    assign secret_key_bytes[1] = secret_key[15:8];
+    assign secret_key_bytes[2] = secret_key[7:0];
 
     always_ff @(posedge clk) begin
         if (state_start) begin
@@ -61,7 +67,7 @@ module mem_shuffle (
                 end
                 ADD: begin
                     state <= TEST;
-                    j <= (j + temp_i + secret_key[i % 24]) % 256;
+                    j <= (j + temp_i + secret_key_bytes[i % 3]);  //no neeed to do mod 256 
                     wen <= 0; 
                     shuffle_mem_handler <= 1;
                 end
