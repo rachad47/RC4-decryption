@@ -10,12 +10,14 @@ module meme_init (
 );
 
 logic [8:0] i; // i as internal signal
+logic temp;
 
 always_ff @(posedge clk) begin
     if (state_start) begin
         i <= 8'h00;
         init_mem_handler <= 1;
         memory_sel <= 2'b01;
+        finish <= 0;
 
     end else begin
         if (i == 9'h100) begin  // 9'h100 = 256 , the idea here is to stop at 256 in way we can read 255

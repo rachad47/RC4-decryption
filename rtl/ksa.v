@@ -87,8 +87,9 @@ module ksa (
     logic [1:0] memory_sel_shuffle;
     
  wire [7:0]j;
+
     mem_shuffle memory_shuffle_inst (
-        .clk(clk), .state_start(~KEY[2]),
+        .clk(clk), .state_start(finish_init), .rst(~KEY[3]), // reset butn is the same one as the start butn of mem_init
         .finish(finish_shuffle),
         .shuffle_mem_handler(shuffle_mem_handler),
         .data(data_shuffle),
@@ -97,7 +98,7 @@ module ksa (
         .wen(wen_shuffle),
       .secret_key(24'b00000000_00000010_01001001) ,
         // .secret_key(24'b01001001_00000010_00000000) ,
-        .iterations(SW[9:0]),  
+        .iterations(SW[8:0]),  
         // .q_data(readdata_shuffle)
         .q_data(q),
         .out_j(j)
