@@ -1,8 +1,29 @@
-C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/memory_handler.sv {1 {vlog -work work -sv -stats=none C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/memory_handler.sv
+C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_memory_handler.sv {1 {vlog -work work -sv -stats=none C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_memory_handler.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module test_memory_handler
+
+Top level modules:
+	test_memory_handler
+
+} {} {}} C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/mem_decrypt.sv {1 {vlog -work work -sv -stats=none C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/mem_decrypt.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module mem_decrypt
+
+Top level modules:
+	mem_decrypt
+
+} {} {}} C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/memory_handler.sv {1 {vlog -work work -sv -stats=none C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/memory_handler.sv
 Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
 -- Compiling module memory_handler
 
 Top level modules:
 	memory_handler
+
+} {} {}} C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_mem_decrypt.sv {1 {vlog -work work -sv -stats=none C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_mem_decrypt.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module test_mem_decrypt
+
+Top level modules:
+	test_mem_decrypt
 
 } {} {}}

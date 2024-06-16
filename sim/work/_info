@@ -8,30 +8,78 @@ z2
 !i10f 100
 cModel Technology
 dC:/CPEN311/homework3
-vmemory_handler
+vmem_decrypt
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1718312496
+Z1 !s110 1718495913
 !i10b 1
-!s100 8i0o_2kl_VBI<4bMoJmE>0
-I5b>z<zgz@o^P7^VI=g_0K2
+!s100 HOk]dhJLaz;oNS1g<JAQ83
+IgI<>EoEd<kP2zb6lR?XSH2
 Z2 VDg1SIo80bB@j0V0VzS_@n1
-!s105 memory_handler_sv_unit
+!s105 mem_decrypt_sv_unit
 S1
 Z3 dC:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim
-w1718311273
-8C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/memory_handler.sv
-FC:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/memory_handler.sv
+w1718495895
+8C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/mem_decrypt.sv
+FC:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/mem_decrypt.sv
 L0 1
 Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-!s108 1718312496.000000
+Z5 !s108 1718495913.000000
+!s107 C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/mem_decrypt.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/mem_decrypt.sv|
+!i113 1
+Z6 o-work work -sv
+Z7 tCvgOpt 0
+vmemory_handler
+R0
+R1
+!i10b 1
+!s100 8i0o_2kl_VBI<4bMoJmE>0
+I5b>z<zgz@o^P7^VI=g_0K2
+R2
+!s105 memory_handler_sv_unit
+S1
+R3
+w1718311273
+8C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/memory_handler.sv
+FC:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/memory_handler.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
 !s107 C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/memory_handler.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/memory_handler.sv|
 !i113 1
-Z5 o-work work -sv
-Z6 tCvgOpt 0
+R6
+R7
+vtest_mem_decrypt
+R0
+R1
+!i10b 1
+!s100 nV@FD^b0_e>V1NCzj@S=70
+IVaM0@7Ma9eAOBbDJjR0KL0
+R2
+!s105 test_mem_decrypt_sv_unit
+S1
+R3
+w1718495657
+8C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_mem_decrypt.sv
+FC:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_mem_decrypt.sv
+L0 2
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_mem_decrypt.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_mem_decrypt.sv|
+!i113 1
+R6
+R7
 vtest_memory_handler
 R0
 R1
@@ -50,9 +98,9 @@ R4
 r1
 !s85 0
 31
-!s108 1718312495.000000
+R5
 !s107 C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_memory_handler.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_memory_handler.sv|
 !i113 1
-R5
 R6
+R7
