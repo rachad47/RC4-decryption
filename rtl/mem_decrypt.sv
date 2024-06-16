@@ -29,6 +29,8 @@ typedef enum logic [4:0] {
     setup_read_i,
     read_i,
     sample_i,
+    stabilize_sample_1,
+    stabilize_sample_2,
     add_to_j,
     setup_read_j,
     read_j,
@@ -71,7 +73,7 @@ always_comb begin
         // states for getting s[i] from memory
         setup_read_i: next_state = read_i;
         read_i: next_state = sample_i;
-        sample_i: next_state = add_to_j; // was add_to_j
+        sample_i: next_state =  add_to_j; // was add_to_j
 
         // j = j + s[i]
         add_to_j: next_state = setup_read_j;
@@ -83,7 +85,7 @@ always_comb begin
 
         // swap s[i] and s[j]
         write_to_i: next_state = write_to_j;
-        write_to_j: next_state = finished; // was setup_read_sum
+        write_to_j: next_state = setup_read_sum; // was setup_read_sum
 
         // states for getting s[s[i] + s[j]] from memory
         setup_read_sum: next_state = read_sum;
@@ -104,7 +106,7 @@ always_comb begin
 
         // k++;
         increment_k: next_state = increment_i;
-        finished: next_state = idle;
+        finished: next_state = finished;
         default: next_state = idle;
     endcase
 end
@@ -179,8 +181,7 @@ always_ff @ (posedge clk) begin
             decrypt_mem_handler <= 1;
             memory_sel <= 0;
             address <= 0;
-            
-            temp_i <= temp_i;
+
             j <= j + temp_i;
         end
         // get s[j]

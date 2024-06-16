@@ -135,9 +135,9 @@ module ksa (
     mem_decrypt get_decrypted_message (
         .clk(clk),
         .start_sig(~KEY[2]),
-        .reset(1'b0),
+        .reset(~KEY[3]),
         .q_data(readdata_decrypt),
-        .iterations(0),
+        .iterations(31),
         .finish(finish_decrypt),
         .decrypt_mem_handler(decrypt_mem_handler),
         .data(data_decrypt),
