@@ -71,7 +71,7 @@ always_comb begin
         // states for getting s[i] from memory
         setup_read_i: next_state = read_i;
         read_i: next_state = sample_i;
-        sample_i: next_state = setup_read_j; // was add_to_j
+        sample_i: next_state = add_to_j; // was add_to_j
 
         // j = j + s[i]
         add_to_j: next_state = setup_read_j;
