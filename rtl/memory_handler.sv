@@ -63,15 +63,15 @@ always_comb begin
             end 
             default: begin
                 // SHOULD NOT REACH HERE
-                output_data_decrypt = 1'b0;
-                output_data_shuffle = 1'b0;
-                wren_d = 1'b0;
-                data_d = 1'b0;
-                address_d = 1'b0;
-                address_m = 1'b0;
-                wren = 1'b0;
-                data = 1'b0;
-                address = 1'b0; 
+                output_data_decrypt = 0;
+                output_data_shuffle = 0;
+                wren_d = 0;
+                data_d = 0;
+                address_d = 0;
+                address_m = 0;
+                wren = 0;
+                data = 0;
+                address = 0; 
             end
         endcase
     end
@@ -95,15 +95,15 @@ always_comb begin
             end 
             default: begin
                 // SHOULD NOT REACH HERE
-                output_data_decrypt = 1'b0;
-                output_data_shuffle = 1'b0;
-                wren_d = 1'b0;
-                data_d = 1'b0;
-                address_d = 1'b0;
-                address_m = 1'b0;
-                wren = 1'b0;
-                data = 1'b0;
-                address = 1'b0; 
+                output_data_decrypt = 0;
+                output_data_shuffle = 0;
+                wren_d = 0;
+                data_d = 0;
+                address_d = 0;
+                address_m = 0;
+                wren = 0;
+                data = 0;
+                address = 0; 
             end
         endcase
     end
@@ -156,29 +156,29 @@ always_comb begin
             end
             default: begin
                 // SHOULD NOT REACH HERE
-                output_data_decrypt = 1'b0;
-                output_data_shuffle = 1'b0;
-                wren_d = 1'b0;
-                data_d = 1'b0;
-                address_d = 1'b0;
-                address_m = 1'b0;
-                wren = 1'b0;
-                data = 1'b0;
-                address = 1'b0; 
+                output_data_decrypt = 0;
+                output_data_shuffle = 0;
+                wren_d = 0;
+                data_d = 0;
+                address_d = 0;
+                address_m = 0;
+                wren = 0;
+                data = 0;
+                address = 0; 
             end
         endcase
     end
     else begin
         // NOT USED 
-        output_data_decrypt = 1'b0;
-        output_data_shuffle = 1'b0;
-        wren_d = 1'b0;
-        data_d = 1'b0;
-        address_d = 1'b0;
-        address_m = 1'b0;
-        wren = 1'b0;
-        data = 1'b0;
-        address = 1'b0; 
+        output_data_decrypt = 0;
+        output_data_shuffle = 0;
+        wren_d = 0;
+        data_d = 0;
+        address_d = 0;
+        address_m = 0;
+        wren = 0;
+        data = 0;
+        address = 0; 
     end
 end
 

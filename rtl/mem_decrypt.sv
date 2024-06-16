@@ -71,7 +71,7 @@ always_comb begin
         // states for getting s[i] from memory
         setup_read_i: next_state = read_i;
         read_i: next_state = sample_i;
-        sample_i: next_state = add_to_j;
+        sample_i: next_state = setup_read_j; // was add_to_j
 
         // j = j + s[i]
         add_to_j: next_state = setup_read_j;
@@ -83,7 +83,7 @@ always_comb begin
 
         // swap s[i] and s[j]
         write_to_i: next_state = write_to_j;
-        write_to_j: next_state = setup_read_sum;
+        write_to_j: next_state = finished; // was setup_read_sum
 
         // states for getting s[s[i] + s[j]] from memory
         setup_read_sum: next_state = read_sum;
@@ -178,8 +178,9 @@ always_ff @ (posedge clk) begin
             finish <= 0;
             decrypt_mem_handler <= 1;
             memory_sel <= 0;
-            address <= i;
-
+            address <= 0;
+            
+            temp_i <= temp_i;
             j <= j + temp_i;
         end
         // get s[j]
@@ -217,6 +218,8 @@ always_ff @ (posedge clk) begin
             decrypt_mem_handler <= 1;
             memory_sel <= 1;
             address <= i;
+            
+            temp_j <= temp_j;
         end
         // s[j] = temp_i
         write_to_j: begin
@@ -290,6 +293,8 @@ always_ff @ (posedge clk) begin
             decrypt_mem_handler <= 1;
             memory_sel <= 3;
             address <= k;
+
+            temp_k <= temp_k;
         end
         // k++
         increment_k: begin

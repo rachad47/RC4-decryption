@@ -19,6 +19,7 @@ module ksa (
     assign clk = CLOCK_50;
     assign reset_n = KEY[3];
 
+    // working RAM
     s_memory s_memory_inst (
         .address(address),
         .clock(CLOCK_50),
@@ -27,41 +28,64 @@ module ksa (
         .q(q)
     );
 
+    logic [7:0] q_m;
+    logic [4:0] address_m;
+
+    // encrypted message ROM
+    message encrypted_message (
+        .address(address_m),
+        .clock(clk),
+        .q(q_m)
+    );
+
+    logic [4:0] address_d;
+    logic [7:0] data_d;
+    logic wren_d;
+
+    // decrypted message RAM
+    decrypted_message write_decrypted_message (
+        .clock(clk),
+        .address(address_d),
+        .data(data_d),
+        .wren(wren_d),
+        .q()
+    );
+
     memory_handler memory_block_router (
         .data_init(data_init),
         .data_shuffle(data_shuffle),
-        .data_decrypt(),
+        .data_decrypt(data_decrypt),
 
         .wren_init(wen_init),
         .wren_shuffle(wen_shuffle),
-        .wren_decrypt(),
+        .wren_decrypt(wen_decrypt),
         
         .address_init(address_init),
         .address_shuffle(address_shuffle),
-        .address_decrypt(),
+        .address_decrypt(address_decrypt),
         
         .mem_sel_init(memory_sel_init),
         .mem_sel_shuffle(memory_sel_shuffle),
-        .mem_sel_decrypt(),
+        .mem_sel_decrypt(memory_sel_decrypt),
         
         .start_init(init_mem_handler),
         .start_shuffle(shuffle_mem_handler),
-        .start_decrypt(),
+        .start_decrypt(decrypt_mem_handler),
         
         .output_data_shuffle(readdata_shuffle),
-        .output_data_decrypt(),
+        .output_data_decrypt(readdata_decrypt),
         
         .q(q),
         .wren(wren),
         .address(address),
         .data(data),
 
-        .wren_d(),
-        .data_d(),
-        .address_d(),
+        .wren_d(wren_d),
+        .data_d(data_d),
+        .address_d(address_d),
         
-        .q_m(),
-        .address_m()
+        .q_m(q_m),
+        .address_m(address_m)
     );
 
     //FSM1 - Memory Initialization
@@ -102,6 +126,24 @@ module ksa (
         // .q_data(readdata_shuffle)
         .q_data(q),
         .out_j(j)
+    );
+
+    logic [7:0] data_decrypt, readdata_decrypt, address_decrypt;
+    logic finish_decrypt, wen_decrypt, decrypt_mem_handler;
+    logic [1:0] memory_sel_decrypt;
+
+    mem_decrypt get_decrypted_message (
+        .clk(clk),
+        .start_sig(~KEY[2]),
+        .reset(1'b0),
+        .q_data(readdata_decrypt),
+        .iterations(0),
+        .finish(finish_decrypt),
+        .decrypt_mem_handler(decrypt_mem_handler),
+        .data(data_decrypt),
+        .address(address_decrypt),
+        .memory_sel(memory_sel_decrypt),
+        .wen(wen_decrypt)
     );
 
     SevenSegmentDisplayDecoder SevenSegmentDisplayDecoder_inst1 (
