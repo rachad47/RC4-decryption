@@ -1,5 +1,5 @@
 Assembler report for rc4
-Sun Jun 16 14:00:30 2024
+Sun Jun 16 14:47:41 2024
 Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
 
 
@@ -11,7 +11,7 @@ Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
   3. Assembler Settings
   4. Assembler Encrypted IP Cores Summary
   5. Assembler Generated Files
-  6. Assembler Device Options: C:/Users/Rachad/Desktop/LAB4/Lab4_template_de1soc/rtl/output_files/rc4.sof
+  6. Assembler Device Options: C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/output_files/rc4.sof
   7. Assembler Messages
 
 
@@ -39,7 +39,7 @@ agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Sun Jun 16 14:00:30 2024 ;
+; Assembler Status      ; Successful - Sun Jun 16 14:47:41 2024 ;
 ; Revision Name         ; rc4                                   ;
 ; Top-level Entity Name ; ksa                                   ;
 ; Family                ; Cyclone V                             ;
@@ -64,24 +64,24 @@ agreement for further details.
 +--------+------------------------+--------------+
 
 
-+----------------------------------------------------------------------------+
-; Assembler Generated Files                                                  ;
-+----------------------------------------------------------------------------+
-; File Name                                                                  ;
-+----------------------------------------------------------------------------+
-; C:/Users/Rachad/Desktop/LAB4/Lab4_template_de1soc/rtl/output_files/rc4.sof ;
-+----------------------------------------------------------------------------+
++---------------------------------------------------------------------------+
+; Assembler Generated Files                                                 ;
++---------------------------------------------------------------------------+
+; File Name                                                                 ;
++---------------------------------------------------------------------------+
+; C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/output_files/rc4.sof ;
++---------------------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------+
-; Assembler Device Options: C:/Users/Rachad/Desktop/LAB4/Lab4_template_de1soc/rtl/output_files/rc4.sof ;
-+----------------+-------------------------------------------------------------------------------------+
-; Option         ; Setting                                                                             ;
-+----------------+-------------------------------------------------------------------------------------+
-; Device         ; 5CSEMA5F31C6                                                                        ;
-; JTAG usercode  ; 0x00CC67D6                                                                          ;
-; Checksum       ; 0x00CC67D6                                                                          ;
-+----------------+-------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------+
+; Assembler Device Options: C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/output_files/rc4.sof ;
++----------------+------------------------------------------------------------------------------------+
+; Option         ; Setting                                                                            ;
++----------------+------------------------------------------------------------------------------------+
+; Device         ; 5CSEMA5F31C6                                                                       ;
+; JTAG usercode  ; 0x04D6C9F2                                                                         ;
+; Checksum       ; 0x04D6C9F2                                                                         ;
++----------------+------------------------------------------------------------------------------------+
 
 
 +--------------------+
@@ -90,14 +90,14 @@ agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus Prime Assembler
     Info: Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
-    Info: Processing started: Sun Jun 16 14:00:22 2024
+    Info: Processing started: Sun Jun 16 14:47:31 2024
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off rc4 -c rc4
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (115030): Assembler is generating device programming files
 Info: Quartus Prime Assembler was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4836 megabytes
-    Info: Processing ended: Sun Jun 16 14:00:30 2024
-    Info: Elapsed time: 00:00:08
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 4895 megabytes
+    Info: Processing ended: Sun Jun 16 14:47:41 2024
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:03
 
 

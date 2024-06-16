@@ -1,1 +1,1 @@
-Info (10281): Verilog HDL Declaration information at mem_shuffle.v(8): object "finish" differs only in case from object "FINISH" in the same scope File: C:/Users/Rachad/Desktop/LAB4/Lab4_template_de1soc/rtl/mem_shuffle.v Line: 8
+Info (10281): Verilog HDL Declaration information at mem_shuffle.v(8): object "finish" differs only in case from object "FINISH" in the same scope File: C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/mem_shuffle.v Line: 8
