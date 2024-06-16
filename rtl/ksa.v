@@ -95,7 +95,7 @@ module ksa (
     logic [1:0] memory_sel_init;
 
     meme_init meme_init_inst (
-        .clk(clk), .state_start(~KEY[3] || reset_pulse),  
+        .clk(clk), .state_start(~KEY[3]  || reset_pulse ),  .start(SW[9]),
         .finish(finish_init),
         .init_mem_handler(init_mem_handler),
         .data(data_init),

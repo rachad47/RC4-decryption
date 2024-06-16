@@ -182,6 +182,10 @@
 				{
 					"name" : "KEY[3]",
 					"strict" : false
+				},
+				{
+					"name" : "SW[9]",
+					"strict" : false
 				}
 			]
 		}
