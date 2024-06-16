@@ -95,7 +95,7 @@ module ksa (
     logic [1:0] memory_sel_init;
 
     meme_init meme_init_inst (
-        .clk(clk), .state_start(~KEY[3]),  
+        .clk(clk), .state_start(~KEY[3] || reset_pulse),  
         .finish(finish_init),
         .init_mem_handler(init_mem_handler),
         .data(data_init),
@@ -113,16 +113,16 @@ module ksa (
  wire [7:0]j;
 
     mem_shuffle memory_shuffle_inst (
-        .clk(clk), .state_start(finish_init), .rst(~KEY[3]), // reset butn is the same one as the start butn of mem_init
+        .clk(clk), .state_start(finish_init), .rst(~KEY[3] || reset_pulse), // reset butn is the same one as the start butn of mem_init
         .finish(finish_shuffle),
         .shuffle_mem_handler(shuffle_mem_handler),
         .data(data_shuffle),
         .address(address_shuffle),
         .memory_sel(memory_sel_shuffle),
         .wen(wen_shuffle),
-      .secret_key(24'b00000000_00000010_01001001) ,
+      .secret_key({2'b0, counter}) ,
         // .secret_key(24'b01001001_00000010_00000000) ,
-        .iterations(SW[8:0]),  
+        .iterations(8'hFF),  
         // .q_data(readdata_shuffle)
         .q_data(q),
         .out_j(j)
@@ -132,10 +132,11 @@ module ksa (
     logic finish_decrypt, wen_decrypt, decrypt_mem_handler;
     logic [1:0] memory_sel_decrypt;
 
+    logic valid;
     mem_decrypt get_decrypted_message (
         .clk(clk),
         .start_sig(finish_shuffle),
-        .reset(~KEY[3]),
+        .reset(~KEY[3] || reset_pulse),
         .q_data(readdata_decrypt),
         .iterations(31),
         .finish(finish_decrypt),
@@ -143,17 +144,47 @@ module ksa (
         .data(data_decrypt),
         .address(address_decrypt),
         .memory_sel(memory_sel_decrypt),
-        .wen(wen_decrypt)
+        .wen(wen_decrypt),
+        .valid(valid) //added it to check the key
     );
 
     SevenSegmentDisplayDecoder SevenSegmentDisplayDecoder_inst1 (
         .ssOut(HEX0),
-        .nIn(j[3:0])
+        .nIn(counter[3:0])
     );
     SevenSegmentDisplayDecoder SevenSegmentDisplayDecoder_inst2 (
         .ssOut(HEX1),
-        .nIn(j[7:4])
+        .nIn(counter[7:4])
+    );
+    SevenSegmentDisplayDecoder SevenSegmentDisplayDecoder_inst3 (
+        .ssOut(HEX2),
+        .nIn(counter[11:8])
+    );
+    SevenSegmentDisplayDecoder SevenSegmentDisplayDecoder_inst4 (
+        .ssOut(HEX3),
+        .nIn(counter[15:12])
+    );
+    SevenSegmentDisplayDecoder SevenSegmentDisplayDecoder_inst5 (
+        .ssOut(HEX4),
+        .nIn(counter[19:16])
+    );
+    SevenSegmentDisplayDecoder SevenSegmentDisplayDecoder_inst6 (
+        .ssOut(HEX5),
+        .nIn(counter[21:20])
     );
 
+    assign LEDR[0]= valid;
+    
+    logic reset_pulse;
+    logic [21:0] counter;
+    rc4_brute_force rc4_brute_force_inst (
+        .clk(clk),
+        .rst(~KEY[3]),
+        .valid(valid),
+        .finish_decrypt(finish_decrypt),
+        .counter(counter),
+        .reset_pulse(reset_pulse),
+        .solved(LEDR[5])
+    );
 
 endmodule

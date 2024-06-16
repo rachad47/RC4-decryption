@@ -9,7 +9,8 @@ module mem_decrypt (
     output logic [7:0] data,
     output logic [7:0] address,
     output logic [1:0] memory_sel,
-    output logic wen
+    output logic wen,
+    output logic valid
 );
 
 // i, j, and k ar variables
@@ -19,6 +20,8 @@ module mem_decrypt (
 logic [7:0] i, j, temp_i, temp_j;
 logic [5:0] k;
 logic [7:0] f, temp_k;
+
+logic [7:0] result;
 
 // state declarations: finish, decrypt_mem_handler, and wen are encoded in the states 
 
@@ -105,7 +108,7 @@ always_comb begin
         end     
 
         // k++;
-        increment_k: next_state = increment_i;
+        increment_k: next_state  = valid ? increment_i : finished;
         finished: next_state = finished;
         default: next_state = idle;
     endcase
@@ -124,6 +127,7 @@ always_ff @ (posedge clk) begin
         end
         // initialize i and j to 0
         start: begin
+            result <= 0;
             wen <= 0;
             data <= 0;
             finish <= 0;
@@ -290,6 +294,7 @@ always_ff @ (posedge clk) begin
         write_output: begin
             wen <= 1;
             data <= f ^ temp_k;
+            result <= f ^ temp_k;  //added
             finish <= 0;
             decrypt_mem_handler <= 1;
             memory_sel <= 3;
@@ -318,5 +323,9 @@ always_ff @ (posedge clk) begin
         end
     endcase
 end
+
+
+assign valid= ((result > 96) && (result < 123)) || (result == 32) ; 
+
     
 endmodule
