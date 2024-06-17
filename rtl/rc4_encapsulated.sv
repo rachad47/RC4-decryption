@@ -5,14 +5,13 @@ module rc4_encapsulated (
     input logic stop_all,
     input logic [7:0] core_init_val,
     input logic [7:0] total_cores,
-    output logic [23:0] secret_key,
+    output logic [21:0] secret_key, in_progress,
     output logic correct_key_found
 );
 
     logic [7:0] address, data, q;
     logic wren;
 
-    assign solved_key = solved_counter;
 
     // working RAM
     s_memory s_memory_inst (
@@ -159,12 +158,16 @@ module rc4_encapsulated (
         .init_val(core_init_val),
         .core_count(total_cores),
         .reset_pulse(reset_pulse),
-        .solved(solved)
+        .solved(solved),
+        .stop_all(stop_all)
     );
 
     logic solved;
 
+    
+
     assign correct_key_found = solved;
     assign secret_key = solved_counter;
+    assign in_progress = counter;
     
 endmodule
