@@ -322,7 +322,7 @@ module ksa (
     //     .solved(LEDR[4])
     // );
 
-    logic [21:0] counter;
+    logic [21:0] counter, counter_1;
 
     rc4_encapsulated johndoe (
         .clk(clk),
@@ -334,11 +334,11 @@ module ksa (
         .total_cores(2),
     );
 
-    rc4_encapsulated johndoe (
+    rc4_encapsulated johndoe1 (
         .clk(clk),
         .reset(~KEY[3]),
         .start(SW[9]),
-        .secret_key(counter),
+        .secret_key(counter_1),
         .correct_key_found(LEDR[1]),
         .core_init_val(1),
         .total_cores(2),
