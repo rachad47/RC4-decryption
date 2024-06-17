@@ -322,17 +322,23 @@ module ksa (
     //     .solved(LEDR[4])
     // );
     
-    parameter CORE_COUNT_LOG_2 = 1;
+    parameter CORE_COUNT_LOG_2 = 2;
     parameter CORE_COUNT = 2**CORE_COUNT_LOG_2;
 
     logic [21:0] counter;
     logic [21:0] counters [CORE_COUNT-1:0];
     logic [CORE_COUNT-1:0] stop_all_signals;
     logic stop_all;
-
-    assign counter = counters[0];
-    assign stop_all = |stop_all_signals;
     
+    assign stop_all = |stop_all_signals;
+
+    always_comb begin
+        counter = counters[0]; // Initialize result with the first element
+        for (int i = 1; i < CORE_COUNT; i = i + 1) begin
+            counter |= counters[i]; // Perform bitwise OR with the next element
+        end
+    end
+
     generate
         genvar i;
         for (i = 0; i < CORE_COUNT; i = i + 1) begin: create_cores
