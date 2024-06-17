@@ -12,8 +12,8 @@ module ksa (
 );
 
     logic clk, reset_n;
-    logic [7:0] address, data, q;
-    logic wren;
+    logic [7:0] address, address_2, data, data_2, q, q_2;
+    logic wren, wren_2;
     
 
     assign clk = CLOCK_50;
@@ -22,14 +22,22 @@ module ksa (
     // working RAM
     s_memory s_memory_inst (
         .address(address),
-        .clock(CLOCK_50),
+        .clock(clk),
         .data(data),
         .wren(wren),
         .q(q)
     );
 
-    logic [7:0] q_m;
-    logic [4:0] address_m;
+    s_memory s_memory_inst_2 (
+        .address(address_2),
+        .data(data_2),
+        .clock(clk),
+        .wren(wren_2),
+        .q(q_2)
+    );
+
+    logic [7:0] q_m, q_m_2;
+    logic [4:0] address_m, address_m_2;
 
     // encrypted message ROM
     message encrypted_message (
@@ -38,9 +46,15 @@ module ksa (
         .q(q_m)
     );
 
-    logic [4:0] address_d;
-    logic [7:0] data_d;
-    logic wren_d;
+    message encrypted_message_2 (
+        .address(address_m_2),
+        .clock(clk),
+        .q(q_m_2)
+    );
+
+    logic [4:0] address_d, address_d_2;
+    logic [7:0] data_d, data_d_2;
+    logic wren_d, wren_d_2;
 
     // decrypted message RAM
     decrypted_message write_decrypted_message (
@@ -48,6 +62,14 @@ module ksa (
         .address(address_d),
         .data(data_d),
         .wren(wren_d),
+        .q()
+    );
+
+    decrypted_message write_decrypted_message_2 (
+        .clock(clk),
+        .address(address_d_2),
+        .data(data_d_2),
+        .wren(wren_d_2),
         .q()
     );
 
@@ -88,6 +110,43 @@ module ksa (
         .address_m(address_m)
     );
 
+    memory_handler memory_block_router_2 (
+        .data_init(data_init_2),
+        .data_shuffle(data_shuffle_2),
+        .data_decrypt(data_decrypt_2),
+
+        .wren_init(wen_init_2),
+        .wren_shuffle(wen_shuffle_2),
+        .wren_decrypt(wen_decrypt_2),
+        
+        .address_init(address_init_2),
+        .address_shuffle(address_shuffle_2),
+        .address_decrypt(address_decrypt_2),
+        
+        .mem_sel_init(memory_sel_init_2),
+        .mem_sel_shuffle(memory_sel_shuffle_2),
+        .mem_sel_decrypt(memory_sel_decrypt_2),
+        
+        .start_init(init_mem_handler_2),
+        .start_shuffle(shuffle_mem_handler_2),
+        .start_decrypt(decrypt_mem_handler_2),
+        
+        .output_data_shuffle(readdata_shuffle_2),
+        .output_data_decrypt(readdata_decrypt_2),
+        
+        .q(q_2),
+        .wren(wren_2),
+        .address(address_2),
+        .data(data_2),
+
+        .wren_d(wren_d_2),
+        .data_d(data_d_2),
+        .address_d(address_d_2),
+        
+        .q_m(q_m_2),
+        .address_m(address_m_2)
+    );
+
     //FSM1 - Memory Initialization
 
     wire finish_init, init_mem_handler, wen_init;
@@ -102,6 +161,20 @@ module ksa (
         .address(address_init),
         .memory_sel(memory_sel_init),
         .wen(wen_init)
+    );
+
+    wire finish_init_2, init_mem_handler_2, wen_init_2;
+    wire [7:0] data_init_2, address_init_2;
+    logic [1:0] memory_sel_init_2;
+
+    meme_init meme_init_inst_2 (
+        .clk(clk), .state_start(~KEY[3] || reset_pulse_2 ), .start(SW[9]),
+        .finish(finish_init_2),
+        .init_mem_handler(init_mem_handler_2),
+        .data(data_init_2),
+        .address(address_init_2),
+        .memory_sel(memory_sel_init_2),
+        .wen(wen_init_2)
     );
     
     // FSM2 - initialization
@@ -128,6 +201,31 @@ module ksa (
         .out_j(j)
     );
 
+    logic finish_shuffle_2, shuffle_mem_handler_2, wen_shuffle_2;
+    logic [7:0] data_shuffle_2, address_shuffle_2, readdata_shuffle_2;
+    logic [1:0] memory_sel_shuffle_2;
+
+    wire [7:0] j_2;
+
+    mem_shuffle memory_shuffle_inst_2 (
+        .clk(clk), .state_start(finish_init_2), .rst(~KEY[3] || reset_pulse_2), // reset butn is the same one as the start butn of mem_init
+        .finish(finish_shuffle_2),
+        .shuffle_mem_handler(shuffle_mem_handler_2),
+        .data(data_shuffle_2),
+        .address(address_shuffle_2),
+        .memory_sel(memory_sel_shuffle_2),
+        .wen(wen_shuffle_2),
+      .secret_key({2'b0, counter_2}) ,
+        // .secret_key(24'b01001001_00000010_00000000) ,
+        .iterations(8'hFF),  
+        // .q_data(readdata_shuffle)
+        .q_data(q_2),
+        .out_j(j_2)
+    );
+
+
+    // FSM3 INITIALIZATION
+
     logic [7:0] data_decrypt, readdata_decrypt, address_decrypt;
     logic finish_decrypt, wen_decrypt, decrypt_mem_handler;
     logic [1:0] memory_sel_decrypt;
@@ -140,6 +238,7 @@ module ksa (
         .q_data(readdata_decrypt),
         .iterations(31),
         .finish(finish_decrypt),
+        .other_finished(finish_decrypt_2),
         .decrypt_mem_handler(decrypt_mem_handler),
         .data(data_decrypt),
         .address(address_decrypt),
@@ -147,6 +246,27 @@ module ksa (
         .wen(wen_decrypt),
         .valid(valid) //added it to check the key
     );
+
+    logic [7:0] data_decrypt_2, readdata_decrypt_2, address_decrypt_2;
+    logic finish_decrypt_2, wen_decrypt_2, decrypt_mem_handler_2;
+    logic [1:0] memory_sel_decrypt_2;
+    logic valid_2;
+
+    mem_decrypt get_decrypted_message_2 (
+        .clk(clk),
+        .start_sig(finish_shuffle_2),
+        .reset(~KEY[3] || reset_pulse_2),
+        .q_data(readdata_decrypt_2),
+        .iterations(31),
+        .finish(finish_decrypt_2),
+        .other_finished(finish_decrypt),
+        .decrypt_mem_handler(decrypt_mem_handler_2),
+        .data(data_decrypt_2),
+        .address(address_decrypt_2),
+        .memory_sel(memory_sel_decrypt_2),
+        .wen(wen_decrypt_2),
+        .valid(valid_2) //added it to check the key
+    );    
 
     SevenSegmentDisplayDecoder SevenSegmentDisplayDecoder_inst1 (
         .ssOut(HEX0),
@@ -173,7 +293,7 @@ module ksa (
         .nIn(counter[21:20])
     );
 
-    assign LEDR[0]= valid;
+    assign LEDR[0]= valid || valid_2;
     
     logic reset_pulse;
     logic [21:0] counter;
@@ -183,8 +303,22 @@ module ksa (
         .valid(valid),
         .finish_decrypt(finish_decrypt),
         .counter(counter),
+        .init_val(22'd0),
         .reset_pulse(reset_pulse),
         .solved(LEDR[5])
+    );
+
+    logic reset_pulse_2;
+    logic [21:0] counter_2;
+    rc4_brute_force rc4_brute_force_inst_2 (
+        .clk(clk),
+        .rst(~KEY[3]),
+        .valid(valid_2),
+        .finish_decrypt(finish_decrypt_2),
+        .counter(counter_2),
+        .init_val(22'd1),
+        .reset_pulse(reset_pulse_2),
+        .solved(LEDR[4])
     );
 
 endmodule
