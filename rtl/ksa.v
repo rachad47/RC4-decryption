@@ -328,9 +328,20 @@ module ksa (
         .clk(clk),
         .reset(~KEY[3]),
         .start(SW[9]),
-        .core_count(),
-        .correct_key(counter),
-        .correct_key_found(LEDR[0])
+        .secret_key(counter),
+        .correct_key_found(LEDR[0]),
+        .core_init_val(0),
+        .total_cores(2),
+    );
+
+    rc4_encapsulated johndoe (
+        .clk(clk),
+        .reset(~KEY[3]),
+        .start(SW[9]),
+        .secret_key(counter),
+        .correct_key_found(LEDR[1]),
+        .core_init_val(1),
+        .total_cores(2),
     );
 
 endmodule
