@@ -4,6 +4,7 @@ module mem_decrypt (
     input reset,
     input logic [7:0] q_data,
     input logic [4:0] iterations,
+    input logic other_finished, // if another core finished
 
     output logic finish, decrypt_mem_handler,
     output logic [7:0] data,
@@ -32,8 +33,6 @@ typedef enum logic [4:0] {
     setup_read_i,
     read_i,
     sample_i,
-    stabilize_sample_1,
-    stabilize_sample_2,
     add_to_j,
     setup_read_j,
     read_j,
@@ -108,7 +107,7 @@ always_comb begin
         end     
 
         // k++;
-        increment_k: next_state  = valid ? increment_i : finished;
+        increment_k: next_state  = (valid && (~other_finished)) ? increment_i : finished; // added
         finished: next_state = finished;
         default: next_state = idle;
     endcase
