@@ -3,6 +3,7 @@ module rc4_brute_force(
     input logic rst,
     input logic valid,
     input logic [21:0] init_val,
+    input logic [7:0] core_count,
     input logic finish_decrypt,
     output logic reset_pulse,
     output logic solved,
@@ -34,7 +35,7 @@ always_ff @(posedge clk or posedge rst) begin
                    else begin
                     state <= INCREMENT;
                     reset_pulse <= 0;
-                    counter <= counter + 2; // was counter + 1
+                    counter <= counter + core_count; // was counter + 1
                    end
                 end 
                 else begin
