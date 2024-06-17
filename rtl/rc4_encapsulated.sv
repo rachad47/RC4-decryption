@@ -12,6 +12,8 @@ module rc4_encapsulated (
     logic [7:0] address, data, q;
     logic wren;
 
+    assign solved_key = solved_counter;
+
     // working RAM
     s_memory s_memory_inst (
         .address(address),
@@ -146,13 +148,14 @@ module rc4_encapsulated (
     );
 
     logic reset_pulse;
-    logic [21:0] counter;
+    logic [21:0] counter, solved_counter;
     rc4_brute_force rc4_brute_force_inst (
         .clk(clk),
         .rst(reset),
         .valid(valid),
         .finish_decrypt(finish_decrypt),
         .counter(counter),
+        .solved_counter(solved_counter),
         .init_val(core_init_val),
         .core_count(total_cores),
         .reset_pulse(reset_pulse),
@@ -162,6 +165,6 @@ module rc4_encapsulated (
     logic solved;
 
     assign correct_key_found = solved;
-    assign secret_key = counter;
+    assign secret_key = solved_counter;
     
 endmodule

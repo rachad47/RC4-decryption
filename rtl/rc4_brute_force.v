@@ -7,7 +7,8 @@ module rc4_brute_force(
     input logic finish_decrypt,
     output logic reset_pulse,
     output logic solved,
-    output logic [21:0] counter
+    output logic [21:0] counter,
+    output logic [21:0] solved_counter
 );
 
 localparam START = 2'b00;
@@ -23,6 +24,7 @@ always_ff @(posedge clk or posedge rst) begin
         reset_pulse <= 0;
         counter <= init_val; // was 0
         solved <= 0;
+        solved_counter <= 0;
 
     end else begin
         case (state)
@@ -31,16 +33,19 @@ always_ff @(posedge clk or posedge rst) begin
                   if (valid) begin
                     state <= CRACKED;
                     reset_pulse <= 0;
+                    solved_counter <= 0;
                    end
                    else begin
                     state <= INCREMENT;
                     reset_pulse <= 0;
                     counter <= counter + core_count; // was counter + 1
+                    solved_counter <= 0;
                    end
                 end 
                 else begin
                     state <= START;
                     reset_pulse <= 0;
+                    solved_counter <= 0;
                 end
             end
 
@@ -48,14 +53,17 @@ always_ff @(posedge clk or posedge rst) begin
                 state <= CRACKED;
                 reset_pulse <= 0;
                 solved <= 1;
+                solved_counter <= counter;
             end
             INCREMENT: begin
                 state <= FINISH;
                 reset_pulse <= 1;
+                solved_counter <= 0;
             end
             FINISH: begin
                 state <= START;
                 reset_pulse <= 0;
+                solved_counter <= 0;
             end
             default: state <= START;
         endcase
