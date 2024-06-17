@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for rc4
-Mon Jun 17 13:37:20 2024
+Mon Jun 17 14:11:52 2024
 Quartus Prime Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
 
 
@@ -103,18 +103,18 @@ agreement for further details.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 8           ;
 ;                            ;             ;
-; Average used               ; 1.52        ;
+; Average used               ; 1.38        ;
 ; Maximum used               ; 8           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   8.2%      ;
-;     Processor 3            ;   8.1%      ;
-;     Processor 4            ;   8.0%      ;
-;     Processor 5            ;   7.0%      ;
-;     Processor 6            ;   7.0%      ;
-;     Processor 7            ;   7.0%      ;
-;     Processor 8            ;   7.0%      ;
+;     Processor 2            ;   6.0%      ;
+;     Processor 3            ;   5.9%      ;
+;     Processor 4            ;   5.9%      ;
+;     Processor 5            ;   5.1%      ;
+;     Processor 6            ;   5.1%      ;
+;     Processor 7            ;   5.1%      ;
+;     Processor 8            ;   5.1%      ;
 +----------------------------+-------------+
 
 
@@ -123,7 +123,7 @@ agreement for further details.
 +------------------------+--------+--------------------------+
 ; SDC File Path          ; Status ; Read at                  ;
 +------------------------+--------+--------------------------+
-; timing_constraints.sdc ; OK     ; Mon Jun 17 13:36:35 2024 ;
+; timing_constraints.sdc ; OK     ; Mon Jun 17 14:10:38 2024 ;
 +------------------------+--------+--------------------------+
 
 
@@ -142,8 +142,8 @@ agreement for further details.
 +------------+-----------------+---------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name          ; Note ;
 +------------+-----------------+---------------------+------+
-; 63.0 MHz   ; 63.0 MHz        ; altera_reserved_tck ;      ;
-; 114.69 MHz ; 114.69 MHz      ; CLOCK_50            ;      ;
+; 55.68 MHz  ; 55.68 MHz       ; altera_reserved_tck ;      ;
+; 110.78 MHz ; 110.78 MHz      ; CLOCK_50            ;      ;
 +------------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -159,8 +159,8 @@ HTML report is unavailable in plain text report export.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 8.730  ; 0.000         ;
-; CLOCK_50            ; 11.281 ; 0.000         ;
+; altera_reserved_tck ; 7.687  ; 0.000         ;
+; CLOCK_50            ; 10.973 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -169,8 +169,8 @@ HTML report is unavailable in plain text report export.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; CLOCK_50            ; 0.270 ; 0.000         ;
-; altera_reserved_tck ; 0.368 ; 0.000         ;
+; CLOCK_50            ; 0.301 ; 0.000         ;
+; altera_reserved_tck ; 0.391 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -179,8 +179,8 @@ HTML report is unavailable in plain text report export.
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; CLOCK_50            ; 17.022 ; 0.000         ;
-; altera_reserved_tck ; 28.487 ; 0.000         ;
+; CLOCK_50            ; 15.843 ; 0.000         ;
+; altera_reserved_tck ; 28.847 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -189,8 +189,8 @@ HTML report is unavailable in plain text report export.
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.580 ; 0.000         ;
-; CLOCK_50            ; 1.242 ; 0.000         ;
+; altera_reserved_tck ; 0.780 ; 0.000         ;
+; CLOCK_50            ; 1.297 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -200,7 +200,7 @@ HTML report is unavailable in plain text report export.
 ; Clock               ; Slack  ; End Point TNS      ;
 +---------------------+--------+--------------------+
 ; CLOCK_50            ; 8.954  ; 0.000              ;
-; altera_reserved_tck ; 14.902 ; 0.000              ;
+; altera_reserved_tck ; 14.840 ; 0.000              ;
 +---------------------+--------+--------------------+
 
 
@@ -211,7 +211,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 28
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 41.019 ns
+Worst Case Available Settling Time: 40.418 ns
 
 
 
@@ -221,8 +221,8 @@ Worst Case Available Settling Time: 41.019 ns
 +------------+-----------------+---------------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name          ; Note ;
 +------------+-----------------+---------------------+------+
-; 64.59 MHz  ; 64.59 MHz       ; altera_reserved_tck ;      ;
-; 121.45 MHz ; 121.45 MHz      ; CLOCK_50            ;      ;
+; 57.15 MHz  ; 57.15 MHz       ; altera_reserved_tck ;      ;
+; 116.48 MHz ; 116.48 MHz      ; CLOCK_50            ;      ;
 +------------+-----------------+---------------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -232,8 +232,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 8.925  ; 0.000         ;
-; CLOCK_50            ; 11.766 ; 0.000         ;
+; altera_reserved_tck ; 7.917  ; 0.000         ;
+; CLOCK_50            ; 11.415 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -242,8 +242,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; CLOCK_50            ; 0.240 ; 0.000         ;
-; altera_reserved_tck ; 0.350 ; 0.000         ;
+; CLOCK_50            ; 0.283 ; 0.000         ;
+; altera_reserved_tck ; 0.388 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -252,8 +252,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; CLOCK_50            ; 17.168 ; 0.000         ;
-; altera_reserved_tck ; 28.734 ; 0.000         ;
+; CLOCK_50            ; 16.003 ; 0.000         ;
+; altera_reserved_tck ; 28.968 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -262,8 +262,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.530 ; 0.000         ;
-; CLOCK_50            ; 1.171 ; 0.000         ;
+; altera_reserved_tck ; 0.730 ; 0.000         ;
+; CLOCK_50            ; 1.195 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -272,8 +272,8 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 +---------------------+--------+-------------------+
 ; Clock               ; Slack  ; End Point TNS     ;
 +---------------------+--------+-------------------+
-; CLOCK_50            ; 8.984  ; 0.000             ;
-; altera_reserved_tck ; 14.858 ; 0.000             ;
+; CLOCK_50            ; 8.983  ; 0.000             ;
+; altera_reserved_tck ; 14.827 ; 0.000             ;
 +---------------------+--------+-------------------+
 
 
@@ -284,7 +284,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 28
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 41.252 ns
+Worst Case Available Settling Time: 40.602 ns
 
 
 
@@ -294,8 +294,8 @@ Worst Case Available Settling Time: 41.252 ns
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 12.098 ; 0.000         ;
-; CLOCK_50            ; 13.811 ; 0.000         ;
+; altera_reserved_tck ; 11.313 ; 0.000         ;
+; CLOCK_50            ; 13.493 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -304,8 +304,8 @@ Worst Case Available Settling Time: 41.252 ns
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.142 ; 0.000         ;
-; CLOCK_50            ; 0.154 ; 0.000         ;
+; altera_reserved_tck ; 0.164 ; 0.000         ;
+; CLOCK_50            ; 0.176 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -314,8 +314,8 @@ Worst Case Available Settling Time: 41.252 ns
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; CLOCK_50            ; 18.006 ; 0.000         ;
-; altera_reserved_tck ; 29.935 ; 0.000         ;
+; CLOCK_50            ; 17.223 ; 0.000         ;
+; altera_reserved_tck ; 30.105 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -324,8 +324,8 @@ Worst Case Available Settling Time: 41.252 ns
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.279 ; 0.000         ;
-; CLOCK_50            ; 0.687 ; 0.000         ;
+; altera_reserved_tck ; 0.383 ; 0.000         ;
+; CLOCK_50            ; 0.701 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -334,8 +334,8 @@ Worst Case Available Settling Time: 41.252 ns
 +---------------------+--------+--------------------+
 ; Clock               ; Slack  ; End Point TNS      ;
 +---------------------+--------+--------------------+
-; CLOCK_50            ; 8.527  ; 0.000              ;
-; altera_reserved_tck ; 14.623 ; 0.000              ;
+; CLOCK_50            ; 8.526  ; 0.000              ;
+; altera_reserved_tck ; 14.564 ; 0.000              ;
 +---------------------+--------+--------------------+
 
 
@@ -346,7 +346,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 28
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 44.639 ns
+Worst Case Available Settling Time: 44.236 ns
 
 
 
@@ -356,8 +356,8 @@ Worst Case Available Settling Time: 44.639 ns
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; altera_reserved_tck ; 12.678 ; 0.000         ;
-; CLOCK_50            ; 14.628 ; 0.000         ;
+; altera_reserved_tck ; 12.001 ; 0.000         ;
+; CLOCK_50            ; 14.345 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -366,8 +366,8 @@ Worst Case Available Settling Time: 44.639 ns
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.117 ; 0.000         ;
-; CLOCK_50            ; 0.143 ; 0.000         ;
+; altera_reserved_tck ; 0.146 ; 0.000         ;
+; CLOCK_50            ; 0.150 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -376,8 +376,8 @@ Worst Case Available Settling Time: 44.639 ns
 +---------------------+--------+---------------+
 ; Clock               ; Slack  ; End Point TNS ;
 +---------------------+--------+---------------+
-; CLOCK_50            ; 18.232 ; 0.000         ;
-; altera_reserved_tck ; 30.329 ; 0.000         ;
+; CLOCK_50            ; 17.532 ; 0.000         ;
+; altera_reserved_tck ; 30.469 ; 0.000         ;
 +---------------------+--------+---------------+
 
 
@@ -386,8 +386,8 @@ Worst Case Available Settling Time: 44.639 ns
 +---------------------+-------+---------------+
 ; Clock               ; Slack ; End Point TNS ;
 +---------------------+-------+---------------+
-; altera_reserved_tck ; 0.240 ; 0.000         ;
-; CLOCK_50            ; 0.612 ; 0.000         ;
+; altera_reserved_tck ; 0.341 ; 0.000         ;
+; CLOCK_50            ; 0.623 ; 0.000         ;
 +---------------------+-------+---------------+
 
 
@@ -396,8 +396,8 @@ Worst Case Available Settling Time: 44.639 ns
 +---------------------+--------+-------------------+
 ; Clock               ; Slack  ; End Point TNS     ;
 +---------------------+--------+-------------------+
-; CLOCK_50            ; 8.480  ; 0.000             ;
-; altera_reserved_tck ; 14.597 ; 0.000             ;
+; CLOCK_50            ; 8.478  ; 0.000             ;
+; altera_reserved_tck ; 14.569 ; 0.000             ;
 +---------------------+--------+-------------------+
 
 
@@ -408,7 +408,7 @@ The design MTBF is not calculated because there are no specified synchronizers i
 Number of Synchronizer Chains Found: 28
 Shortest Synchronizer Chain: 2 Registers
 Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-Worst Case Available Settling Time: 45.273 ns
+Worst Case Available Settling Time: 44.861 ns
 
 
 
@@ -418,9 +418,9 @@ Worst Case Available Settling Time: 45.273 ns
 +----------------------+--------+-------+----------+---------+---------------------+
 ; Clock                ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
 +----------------------+--------+-------+----------+---------+---------------------+
-; Worst-case Slack     ; 8.730  ; 0.117 ; 17.022   ; 0.240   ; 8.480               ;
-;  CLOCK_50            ; 11.281 ; 0.143 ; 17.022   ; 0.612   ; 8.480               ;
-;  altera_reserved_tck ; 8.730  ; 0.117 ; 28.487   ; 0.240   ; 14.597              ;
+; Worst-case Slack     ; 7.687  ; 0.146 ; 15.843   ; 0.341   ; 8.478               ;
+;  CLOCK_50            ; 10.973 ; 0.150 ; 15.843   ; 0.623   ; 8.478               ;
+;  altera_reserved_tck ; 7.687  ; 0.146 ; 28.847   ; 0.341   ; 14.564              ;
 ; Design-wide TNS      ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
 ;  CLOCK_50            ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
 ;  altera_reserved_tck ; 0.000  ; 0.000 ; 0.000    ; 0.000   ; 0.000               ;
@@ -769,10 +769,10 @@ Worst Case Available Settling Time: 45.273 ns
 +---------------------+---------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 23050      ; 0        ; 315      ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 35559      ; 0        ; 565      ; 0        ;
 ; CLOCK_50            ; altera_reserved_tck ; false path ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck ; CLOCK_50            ; false path ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; CLOCK_50            ; 39214      ; 0        ; 0        ; 0        ;
+; CLOCK_50            ; CLOCK_50            ; 67171      ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -782,10 +782,10 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 23050      ; 0        ; 315      ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 35559      ; 0        ; 565      ; 0        ;
 ; CLOCK_50            ; altera_reserved_tck ; false path ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck ; CLOCK_50            ; false path ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; CLOCK_50            ; 39214      ; 0        ; 0        ; 0        ;
+; CLOCK_50            ; CLOCK_50            ; 67171      ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -795,9 +795,9 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 1052       ; 0        ; 0        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 1550       ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck ; CLOCK_50            ; false path ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; CLOCK_50            ; 389        ; 0        ; 0        ; 0        ;
+; CLOCK_50            ; CLOCK_50            ; 761        ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -807,9 +807,9 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +---------------------+---------------------+------------+----------+----------+----------+
 ; From Clock          ; To Clock            ; RR Paths   ; FR Paths ; RF Paths ; FF Paths ;
 +---------------------+---------------------+------------+----------+----------+----------+
-; altera_reserved_tck ; altera_reserved_tck ; 1052       ; 0        ; 0        ; 0        ;
+; altera_reserved_tck ; altera_reserved_tck ; 1550       ; 0        ; 0        ; 0        ;
 ; altera_reserved_tck ; CLOCK_50            ; false path ; 0        ; 0        ; 0        ;
-; CLOCK_50            ; CLOCK_50            ; 389        ; 0        ; 0        ; 0        ;
+; CLOCK_50            ; CLOCK_50            ; 761        ; 0        ; 0        ; 0        ;
 +---------------------+---------------------+------------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -834,9 +834,9 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 4     ; 4    ;
-; Unconstrained Input Port Paths  ; 1099  ; 1099 ;
-; Unconstrained Output Ports      ; 42    ; 42   ;
-; Unconstrained Output Port Paths ; 570   ; 570  ;
+; Unconstrained Input Port Paths  ; 2129  ; 2129 ;
+; Unconstrained Output Ports      ; 52    ; 52   ;
+; Unconstrained Output Port Paths ; 1166  ; 1166 ;
 +---------------------------------+-------+------+
 
 
@@ -908,6 +908,16 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; HEX5[4]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[5]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[6]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[0]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[1]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[2]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[3]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[4]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[5]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[6]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[7]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[8]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[9]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; altera_reserved_tdo ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +---------------------+---------------------------------------------------------------------------------------+
 
@@ -970,6 +980,16 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; HEX5[4]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[5]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; HEX5[6]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[0]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[1]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[2]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[3]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[4]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[5]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[6]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[7]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[8]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
+; LEDR[9]             ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 ; altera_reserved_tdo ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
 +---------------------+---------------------------------------------------------------------------------------+
 
@@ -980,7 +1000,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
     Info: Version 16.1.2 Build 203 01/18/2017 SJ Lite Edition
-    Info: Processing started: Mon Jun 17 13:36:33 2024
+    Info: Processing started: Mon Jun 17 14:10:34 2024
 Info: Command: quartus_sta rc4 -c rc4
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -998,150 +1018,150 @@ Info (332151): Clock uncertainty is not calculated until you update the timing n
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
 Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Info: Analyzing Slow 1100mV 85C Model
-Info (332146): Worst-case setup slack is 8.730
+Info (332146): Worst-case setup slack is 7.687
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.730               0.000 altera_reserved_tck 
-    Info (332119):    11.281               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.270
+    Info (332119):     7.687               0.000 altera_reserved_tck 
+    Info (332119):    10.973               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.301
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.270               0.000 CLOCK_50 
-    Info (332119):     0.368               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is 17.022
+    Info (332119):     0.301               0.000 CLOCK_50 
+    Info (332119):     0.391               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 15.843
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    17.022               0.000 CLOCK_50 
-    Info (332119):    28.487               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.580
+    Info (332119):    15.843               0.000 CLOCK_50 
+    Info (332119):    28.847               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.780
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.580               0.000 altera_reserved_tck 
-    Info (332119):     1.242               0.000 CLOCK_50 
+    Info (332119):     0.780               0.000 altera_reserved_tck 
+    Info (332119):     1.297               0.000 CLOCK_50 
 Info (332146): Worst-case minimum pulse width slack is 8.954
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
     Info (332119):     8.954               0.000 CLOCK_50 
-    Info (332119):    14.902               0.000 altera_reserved_tck 
+    Info (332119):    14.840               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 28 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 28
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 41.019 ns
+    Info (332114): Worst Case Available Settling Time: 40.418 ns
     Info (332114): 
 Info: Analyzing Slow 1100mV 0C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 8.925
+Info (332146): Worst-case setup slack is 7.917
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.925               0.000 altera_reserved_tck 
-    Info (332119):    11.766               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.240
+    Info (332119):     7.917               0.000 altera_reserved_tck 
+    Info (332119):    11.415               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.283
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.240               0.000 CLOCK_50 
-    Info (332119):     0.350               0.000 altera_reserved_tck 
-Info (332146): Worst-case recovery slack is 17.168
+    Info (332119):     0.283               0.000 CLOCK_50 
+    Info (332119):     0.388               0.000 altera_reserved_tck 
+Info (332146): Worst-case recovery slack is 16.003
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    17.168               0.000 CLOCK_50 
-    Info (332119):    28.734               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.530
+    Info (332119):    16.003               0.000 CLOCK_50 
+    Info (332119):    28.968               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.730
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.530               0.000 altera_reserved_tck 
-    Info (332119):     1.171               0.000 CLOCK_50 
-Info (332146): Worst-case minimum pulse width slack is 8.984
+    Info (332119):     0.730               0.000 altera_reserved_tck 
+    Info (332119):     1.195               0.000 CLOCK_50 
+Info (332146): Worst-case minimum pulse width slack is 8.983
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.984               0.000 CLOCK_50 
-    Info (332119):    14.858               0.000 altera_reserved_tck 
+    Info (332119):     8.983               0.000 CLOCK_50 
+    Info (332119):    14.827               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 28 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 28
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 41.252 ns
+    Info (332114): Worst Case Available Settling Time: 40.602 ns
     Info (332114): 
 Info: Analyzing Fast 1100mV 85C Model
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 12.098
+Info (332146): Worst-case setup slack is 11.313
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    12.098               0.000 altera_reserved_tck 
-    Info (332119):    13.811               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.142
+    Info (332119):    11.313               0.000 altera_reserved_tck 
+    Info (332119):    13.493               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.164
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.142               0.000 altera_reserved_tck 
-    Info (332119):     0.154               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is 18.006
+    Info (332119):     0.164               0.000 altera_reserved_tck 
+    Info (332119):     0.176               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is 17.223
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    18.006               0.000 CLOCK_50 
-    Info (332119):    29.935               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.279
+    Info (332119):    17.223               0.000 CLOCK_50 
+    Info (332119):    30.105               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.383
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.279               0.000 altera_reserved_tck 
-    Info (332119):     0.687               0.000 CLOCK_50 
-Info (332146): Worst-case minimum pulse width slack is 8.527
+    Info (332119):     0.383               0.000 altera_reserved_tck 
+    Info (332119):     0.701               0.000 CLOCK_50 
+Info (332146): Worst-case minimum pulse width slack is 8.526
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.527               0.000 CLOCK_50 
-    Info (332119):    14.623               0.000 altera_reserved_tck 
+    Info (332119):     8.526               0.000 CLOCK_50 
+    Info (332119):    14.564               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 28 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 28
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 44.639 ns
+    Info (332114): Worst Case Available Settling Time: 44.236 ns
     Info (332114): 
 Info: Analyzing Fast 1100mV 0C Model
 Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in TimeQuest to see clock uncertainties.
-Info (332146): Worst-case setup slack is 12.678
+Info (332146): Worst-case setup slack is 12.001
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    12.678               0.000 altera_reserved_tck 
-    Info (332119):    14.628               0.000 CLOCK_50 
-Info (332146): Worst-case hold slack is 0.117
+    Info (332119):    12.001               0.000 altera_reserved_tck 
+    Info (332119):    14.345               0.000 CLOCK_50 
+Info (332146): Worst-case hold slack is 0.146
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.117               0.000 altera_reserved_tck 
-    Info (332119):     0.143               0.000 CLOCK_50 
-Info (332146): Worst-case recovery slack is 18.232
+    Info (332119):     0.146               0.000 altera_reserved_tck 
+    Info (332119):     0.150               0.000 CLOCK_50 
+Info (332146): Worst-case recovery slack is 17.532
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    18.232               0.000 CLOCK_50 
-    Info (332119):    30.329               0.000 altera_reserved_tck 
-Info (332146): Worst-case removal slack is 0.240
+    Info (332119):    17.532               0.000 CLOCK_50 
+    Info (332119):    30.469               0.000 altera_reserved_tck 
+Info (332146): Worst-case removal slack is 0.341
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.240               0.000 altera_reserved_tck 
-    Info (332119):     0.612               0.000 CLOCK_50 
-Info (332146): Worst-case minimum pulse width slack is 8.480
+    Info (332119):     0.341               0.000 altera_reserved_tck 
+    Info (332119):     0.623               0.000 CLOCK_50 
+Info (332146): Worst-case minimum pulse width slack is 8.478
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     8.480               0.000 CLOCK_50 
-    Info (332119):    14.597               0.000 altera_reserved_tck 
+    Info (332119):     8.478               0.000 CLOCK_50 
+    Info (332119):    14.569               0.000 altera_reserved_tck 
 Info (332114): Report Metastability: Found 28 synchronizer chains.
     Info (332114): The design MTBF is not calculated because there are no specified synchronizers in the design.
     Info (332114): Number of Synchronizer Chains Found: 28
     Info (332114): Shortest Synchronizer Chain: 2 Registers
     Info (332114): Fraction of Chains for which MTBFs Could Not be Calculated: 1.000
-    Info (332114): Worst Case Available Settling Time: 45.273 ns
+    Info (332114): Worst Case Available Settling Time: 44.861 ns
     Info (332114): 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 5322 megabytes
-    Info: Processing ended: Mon Jun 17 13:37:20 2024
-    Info: Elapsed time: 00:00:47
-    Info: Total CPU time (on all processors): 00:00:32
+    Info: Peak virtual memory: 5377 megabytes
+    Info: Processing ended: Mon Jun 17 14:11:52 2024
+    Info: Elapsed time: 00:01:18
+    Info: Total CPU time (on all processors): 00:00:54
 
 
