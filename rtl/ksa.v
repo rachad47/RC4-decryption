@@ -321,27 +321,33 @@ module ksa (
     //     .reset_pulse(reset_pulse_2),
     //     .solved(LEDR[4])
     // );
+    
+    parameter CORE_COUNT_LOG_2 = 1;
+    parameter CORE_COUNT = 2**CORE_COUNT_LOG_2;
 
-    logic [21:0] counter, counter_1;
+    logic [21:0] counter;
+    logic [21:0] counters [CORE_COUNT-1:0];
+    logic [CORE_COUNT-1:0] stop_all_signals;
+    logic stop_all;
 
-    rc4_encapsulated johndoe (
-        .clk(clk),
-        .reset(~KEY[3]),
-        .start(SW[9]),
-        .secret_key(counter),
-        .correct_key_found(LEDR[0]),
-        .core_init_val(0),
-        .total_cores(2),
-    );
+    assign counter = counters[0];
+    assign stop_all = |stop_all_signals;
+    
+    generate
+        genvar i;
+        for (i = 0; i < CORE_COUNT; i = i + 1) begin: create_cores
+            rc4_encapsulated johndoe (
+                .clk(clk),
+                .reset(~KEY[3]),
+                .start(SW[9]),
+                .secret_key(counters[i]),
+                .stop_all(stop_all),
+                .correct_key_found(stop_all_signals[i]),
+                .core_init_val(i),
+                .total_cores(CORE_COUNT),
+            );
+        end
+    endgenerate
 
-    rc4_encapsulated johndoe1 (
-        .clk(clk),
-        .reset(~KEY[3]),
-        .start(SW[9]),
-        .secret_key(counter_1),
-        .correct_key_found(LEDR[1]),
-        .core_init_val(1),
-        .total_cores(2),
-    );
 
 endmodule
