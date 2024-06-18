@@ -143,7 +143,8 @@ module rc4_encapsulated (
         .address(address_decrypt),
         .memory_sel(memory_sel_decrypt),
         .wen(wen_decrypt),
-        .valid(valid) //added it to check the key
+        .valid(valid), //added it to check the key,
+        .valid_test(1'b0)
     );
 
     logic reset_pulse;
