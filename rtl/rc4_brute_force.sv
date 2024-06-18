@@ -21,7 +21,7 @@ localparam INCREMENT    = 3'b100;
 localparam FINISH       = 3'b101;
 localparam CRACKED      = 3'b110;
 
-logic [2:0] state;
+logic [2:0] state /* synthesis keep */;
 
 always_ff @(posedge clk or posedge rst) begin
     if (rst) begin

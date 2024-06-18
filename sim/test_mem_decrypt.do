@@ -17,6 +17,8 @@ add wave -noupdate -expand -group {Internal Signals} /test_mem_decrypt/DUT/temp_
 add wave -noupdate -expand -group {Internal Signals} /test_mem_decrypt/DUT/temp_j
 add wave -noupdate -expand -group {Internal Signals} /test_mem_decrypt/DUT/temp_k
 add wave -noupdate -expand -group {Internal Signals} /test_mem_decrypt/DUT/f
+add wave -noupdate -expand -group {Internal Signals} /test_mem_decrypt/DUT/valid
+add wave -noupdate -expand -group {Internal Signals} /test_mem_decrypt/DUT/other_finished
 add wave -noupdate -expand -group STATE /test_mem_decrypt/DUT/state
 add wave -noupdate -expand -group STATE /test_mem_decrypt/DUT/next_state
 TreeUpdate [SetDefaultTree]

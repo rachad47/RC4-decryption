@@ -5,6 +5,7 @@ module mem_decrypt (
     input logic [7:0] q_data,
     input logic [4:0] iterations,
     input logic other_finished, // if another core finished
+    input logic valid_test,
 
     output logic finish, decrypt_mem_handler,
     output logic [7:0] data,
@@ -324,7 +325,7 @@ always_ff @ (posedge clk) begin
 end
 
 
-assign valid= ((result > 96) && (result < 123)) || (result == 32) ; 
+assign valid = valid_test ? 1'b1 : (((result > 96) && (result < 123)) || (result == 32));
 
     
 endmodule

@@ -30,7 +30,7 @@ module mem_shuffle (
     localparam TEST = 4'b1011;
     localparam IDLE = 4'b1100;
 
-    logic [3:0] state;
+    logic [3:0] state  /* synthesis keep */;
 
     logic [7:0] temp_i, temp_j;
 

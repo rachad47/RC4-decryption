@@ -42,7 +42,7 @@ module ksa (
     );
 
     
-    parameter CORE_COUNT_LOG_2 = 3;
+    parameter CORE_COUNT_LOG_2 = 2;
     parameter CORE_COUNT = 2**CORE_COUNT_LOG_2;
 
     logic [21:0] counter, display, in_progress;

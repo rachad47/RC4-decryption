@@ -11,6 +11,8 @@ module test_mem_decrypt ();
     logic [7:0] address;
     logic [1:0] memory_sel;
     logic wen;
+    logic valid_test;
+    logic other_finished;
 
     mem_decrypt DUT (
         .clk(clk),
@@ -23,7 +25,9 @@ module test_mem_decrypt ();
         .address(address),
         .memory_sel(memory_sel),
         .wen(wen),
-        .iterations(1)
+        .iterations(1),
+        .valid_test(valid_test),
+        .other_finished(other_finished)
     );
 
     initial forever begin
@@ -32,6 +36,8 @@ module test_mem_decrypt ();
     end
 
     initial begin
+        valid_test = 1'b1;
+        other_finished = 1'b0;
         q_data = 1;
         reset = 1'b1; #10;
         reset = 1'b0; #10;
@@ -40,6 +46,13 @@ module test_mem_decrypt ();
         start = 1'b0; 
 
         #500;
+
+        reset = 1'b1; #10;
+        reset = 1'b0; start = 1'b1; #10;
+
+        other_finished = 1'b1; 
+
+        #300;
 
         $stop;
     end

@@ -10,15 +10,15 @@ cModel Technology
 dC:/CPEN311/homework3
 vmem_decrypt
 Z0 DXx6 sv_std 3 std 0 22 AD7iAPLo6nTIKk<N0eo=D3
-Z1 !s110 1718495913
+Z1 !s110 1718675805
 !i10b 1
-!s100 HOk]dhJLaz;oNS1g<JAQ83
-IgI<>EoEd<kP2zb6lR?XSH2
+!s100 ghlT_df_aaQ_CB8W_Xfkm0
+IGQmgW^<[^K0kH9TTXJ^`R2
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 !s105 mem_decrypt_sv_unit
 S1
 Z3 dC:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim
-w1718495895
+w1718671488
 8C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/mem_decrypt.sv
 FC:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/mem_decrypt.sv
 L0 1
@@ -26,7 +26,7 @@ Z4 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z5 !s108 1718495913.000000
+Z5 !s108 1718675805.000000
 !s107 C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/mem_decrypt.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/mem_decrypt.sv|
 !i113 1
@@ -36,13 +36,13 @@ vmemory_handler
 R0
 R1
 !i10b 1
-!s100 8i0o_2kl_VBI<4bMoJmE>0
-I5b>z<zgz@o^P7^VI=g_0K2
+!s100 X<3ZCBBMS0_SK0Hi1K=R>0
+Ihle@N2n<S9l3;SC_^LYTb1
 R2
 !s105 memory_handler_sv_unit
 S1
 R3
-w1718311273
+w1718500144
 8C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/memory_handler.sv
 FC:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/memory_handler.sv
 L0 1
@@ -56,17 +56,41 @@ R5
 !i113 1
 R6
 R7
+vrc4_brute_force
+R0
+R1
+!i10b 1
+!s100 76RlZol;[nCXA2>P_^D>f1
+I42[V;NX[DB2;eU>7W0Rfk3
+R2
+!s105 rc4_brute_force_sv_unit
+S1
+R3
+w1718658952
+8C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/rc4_brute_force.sv
+FC:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/rc4_brute_force.sv
+L0 1
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/rc4_brute_force.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/rtl/rc4_brute_force.sv|
+!i113 1
+R6
+R7
 vtest_mem_decrypt
 R0
 R1
 !i10b 1
-!s100 nV@FD^b0_e>V1NCzj@S=70
-IVaM0@7Ma9eAOBbDJjR0KL0
+!s100 NCQQE?jWi_LN?c2PYD7zd1
+Ii^kNN<YNfb`oMgIIcl<N<1
 R2
 !s105 test_mem_decrypt_sv_unit
 S1
 R3
-w1718495657
+w1718675063
 8C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_mem_decrypt.sv
 FC:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_mem_decrypt.sv
 L0 2
@@ -101,6 +125,30 @@ r1
 R5
 !s107 C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_memory_handler.sv|
 !s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_memory_handler.sv|
+!i113 1
+R6
+R7
+vtest_rc4_brute_force
+R0
+R1
+!i10b 1
+!s100 1AZhXkPP8YDMGS:[?Ej_D0
+IY8?PEeKQXmTanOH=aklJ13
+R2
+!s105 test_rc4_brute_force_sv_unit
+S1
+R3
+w1718661397
+8C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_rc4_brute_force.sv
+FC:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_rc4_brute_force.sv
+L0 3
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_rc4_brute_force.sv|
+!s90 -reportprogress|300|-work|work|-sv|-stats=none|C:/Paulo_Lin_86240645_Lab_4/Lab4_template_de1soc/sim/test_rc4_brute_force.sv|
 !i113 1
 R6
 R7
