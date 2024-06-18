@@ -45,6 +45,7 @@ module rc4_encapsulated (
         .q()
     );
 
+    // Interface for FSMs and memory blocks
     memory_handler memory_block_router (
         .data_init(data_init),
         .data_shuffle(data_shuffle),
@@ -147,6 +148,8 @@ module rc4_encapsulated (
         .valid_test(1'b0)
     );
 
+    // rc4_brute force instantiation
+    // module that loops through keys to check
     logic reset_pulse;
     logic [21:0] counter, solved_counter;
     rc4_brute_force rc4_brute_force_inst (
@@ -165,8 +168,7 @@ module rc4_encapsulated (
 
     logic solved;
 
-    
-
+    // outputs 
     assign correct_key_found = solved;
     assign secret_key = solved_counter;
     assign in_progress = counter;

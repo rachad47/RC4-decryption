@@ -62,7 +62,7 @@ always_comb begin
                 address_m = 0;
             end 
             default: begin
-                // SHOULD NOT REACH HERE
+                // NOT USED
                 output_data_decrypt = 0;
                 output_data_shuffle = 0;
                 wren_d = 0;
@@ -155,7 +155,6 @@ always_comb begin
                 address_m = 0;
             end
             default: begin
-                // SHOULD NOT REACH HERE
                 output_data_decrypt = 0;
                 output_data_shuffle = 0;
                 wren_d = 0;

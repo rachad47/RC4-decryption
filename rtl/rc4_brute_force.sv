@@ -24,6 +24,7 @@ localparam CRACKED      = 3'b110;
 logic [2:0] state /* synthesis keep */;
 
 always_ff @(posedge clk or posedge rst) begin
+    // initalize variables
     if (rst) begin
         state <= START;
         reset_pulse <= 0;
@@ -32,12 +33,13 @@ always_ff @(posedge clk or posedge rst) begin
         solved_counter <= 0;
     end else begin
         case (state)
+            // idle state
             START: begin
                 state <= CHECK_FINISH;
                 reset_pulse <= 0;
                 solved_counter <= 0;
             end
-
+            // check if core has finished decrypting
             CHECK_FINISH: begin
                 if (finish_decrypt) begin
                     state <= CHECK_VALID;
@@ -45,7 +47,7 @@ always_ff @(posedge clk or posedge rst) begin
                     state <= START;
                 end
             end
-
+            // check if the decrypted message is valid
             CHECK_VALID: begin
                 if (valid) begin
                     state <= CHECK_STOP;
@@ -53,7 +55,7 @@ always_ff @(posedge clk or posedge rst) begin
                     state <= INCREMENT;
                 end
             end
-
+            // check if any other core has finished
             CHECK_STOP: begin
                 if (stop_all) begin
                     solved_counter <= 0;
@@ -62,27 +64,27 @@ always_ff @(posedge clk or posedge rst) begin
                     state <= CRACKED;
                 end
             end
-
+            // change the key to check
             INCREMENT: begin
                 counter <= counter + core_count;
                 state <= FINISH;
                 reset_pulse <= 1;
                 solved_counter <= 0;
             end
-
+            // finished decrypting
             FINISH: begin
                 state <= START;
                 reset_pulse <= 0;
                 solved_counter <= 0;
             end
-
+            // core got the message
             CRACKED: begin
                 state <= CRACKED;
                 reset_pulse <= 0;
                 solved <= 1;
                 solved_counter <= counter;
             end
-
+            
             default: state <= START;
         endcase
     end

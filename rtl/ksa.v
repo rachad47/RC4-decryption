@@ -15,7 +15,7 @@ module ksa (
     assign clk = CLOCK_50;
     assign reset_n = KEY[3];
 
-
+    // displays the secret_key
     SevenSegmentDisplayDecoder SevenSegmentDisplayDecoder_inst1 (
         .ssOut(HEX0),
         .nIn(display[3:0])
@@ -41,7 +41,7 @@ module ksa (
         .nIn(display[21:20])
     );
 
-    
+    // core count    
     parameter CORE_COUNT_LOG_2 = 2;
     parameter CORE_COUNT = 2**CORE_COUNT_LOG_2;
 
@@ -49,7 +49,8 @@ module ksa (
     logic [21:0] counters [CORE_COUNT-1:0];
     logic [CORE_COUNT-1:0] stop_all_signals;
     logic stop_all;
-    
+
+    // if any of cores finished, we stop everything else    
     assign stop_all = |stop_all_signals;
 
     always_comb begin
@@ -63,16 +64,13 @@ module ksa (
 
     assign LEDR = {10{stop_all}};  // indicating solved
 
-    
-
-
     // assign counter = counters[SW];
     
-
     generate
+        // generates the cores to decrypt the message
         genvar i;
         for (i = 0; i < CORE_COUNT; i = i + 1) begin: create_cores
-            rc4_encapsulated johndoe (
+            rc4_encapsulated decryptor_cores (
                 .clk(clk),
                 .reset(~KEY[3]),
                 .start(SW[9]),

@@ -57,7 +57,7 @@ module mem_shuffle (
         
         end else begin
             case (state)
-
+                // waiting state
                 IDLE: begin
                     state <= state_start ? START : IDLE;
                     i <= 0;

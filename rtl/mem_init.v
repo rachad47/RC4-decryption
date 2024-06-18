@@ -14,6 +14,7 @@ logic [8:0] i; // i as internal signal
 logic temp;
 
 always_ff @(posedge clk or posedge state_start) begin
+    //  initalize i to 0
     if (state_start) begin
         i <= 8'h00;
         init_mem_handler <= 1;
@@ -29,6 +30,7 @@ always_ff @(posedge clk or posedge state_start) begin
                 memory_sel <= 2'b00;
 
             end else begin
+                // done initializing the S memory
                 finish <= 0;
                 i <= i + 1;
                 wen <= 1;
@@ -42,6 +44,7 @@ always_ff @(posedge clk or posedge state_start) begin
     end
 end
 
+// memory argument outputs
 assign data = i;
 assign address = i;
 
