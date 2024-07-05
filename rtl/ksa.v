@@ -42,7 +42,7 @@ module ksa (
     );
 
     // core count    
-    parameter CORE_COUNT_LOG_2 = 2;
+    parameter CORE_COUNT_LOG_2 = 7;  //7^2= 128 is the max cores we can make or else we run out of hardware on the FPGA (De1-SoC)
     parameter CORE_COUNT = 2**CORE_COUNT_LOG_2;
 
     logic [21:0] counter, display, in_progress;
